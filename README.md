@@ -8,5 +8,7 @@ TEG is a tool for generate skeleton for fast start write tests.
 
 ## Usage
 
+Run generator with path where must be unzip ``` npm run gen <path> ```
+
 ## License
 [ISC](LICENSE.md)
