@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel ./src -d ./lib",
     "lint": "eslint ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gen": "npm run build && node gen.js"
   },
   "keywords": [
     "qa",

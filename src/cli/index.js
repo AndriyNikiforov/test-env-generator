@@ -21,10 +21,10 @@ commander
 
 // Show all tool commands
 commander.on('--help', () => {
-    console.log(chalk.default.gray.bold('Welcome to help manual'));
-    console.log(chalk.default.green('selenium'), '- generate selenium webdriver and standalone server');
-    console.log(chalk.default.yellow('webdriver.io'), '- generate webdriver.io skeleton with pom and standalone server');
-    console.log(chalk.default.cyan('appium'), '- generate  appium skeleton');
+  console.log('');
+  console.log(chalk.default.gray.bold('Welcome to help manual'));
+  console.log(chalk.default.green('selenium'), '- generate selenium webdriver and standalone server');    console.log(chalk.default.yellow('webdriver.io'), '- generate webdriver.io skeleton with pom and standalone server');
+  console.log(chalk.default.cyan('appium'), '- generate  appium skeleton');
 });
 
 // Command for generate selenium skeleton
@@ -41,8 +41,19 @@ commander
 
 // Command for generate webdriver.io skeleton
 commander
-  .command('webdriver.io')
+  .command('webdriver.io <path>')
   .description('generate webdriver.io skeleton')
   .action((path) => webdriverExt(path));
+
+console.log('');
+figle('Success', (err, data) => {
+    if(err) {
+        console.error('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+
+    console.log(data);
+});
 
 module.exports = commander;
