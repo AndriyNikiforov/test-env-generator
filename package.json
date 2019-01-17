@@ -1,12 +1,15 @@
 {
   "name": "test-env-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "tool for generate env with all needed solution",
   "main": "gen.js",
   "scripts": {
     "build": "babel ./src -d ./lib",
     "lint": "eslint ./src",
     "gen": "npm run build && node gen.js"
+  },
+  "bin": {
+    "teg": "./gen.js"
   },
   "keywords": [
     "qa",
