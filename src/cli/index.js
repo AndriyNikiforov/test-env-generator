@@ -1,0 +1,48 @@
+'use strict';
+
+const chalk = require('chalk');
+const figle = require('figlet');
+const commander = require('commander');
+const { seleniumExt, appiumExt, webdriverExt } = require('../generator/');
+
+// Show tool name
+figle('TEG - qa tool', (err, data) => {
+    if(err) {
+        console.error('Something went wrong...');
+        console.dir(err);
+        return;
+    }
+
+    console.log(data);
+});
+
+commander
+  .version('1.0.0', '-v, --version');
+
+// Show all tool commands
+commander.on('--help', () => {
+    console.log(chalk.default.gray.bold('Welcome to help manual'));
+    console.log(chalk.default.green('selenium'), '- generate selenium webdriver and standalone server');
+    console.log(chalk.default.yellow('webdriver.io'), '- generate webdriver.io skeleton with pom and standalone server');
+    console.log(chalk.default.cyan('appium'), '- generate  appium skeleton');
+});
+
+// Command for generate selenium skeleton
+commander
+  .command('selenium <path>')
+  .description('generate selenium skeleton')
+  .action((path) => seleniumExt(path));
+
+// Command for generate appium skeleton
+commander
+  .command('appium <path>')
+  .description('generate appium skeleton')
+  .action((path) => appiumExt(path));
+
+// Command for generate webdriver.io skeleton
+commander
+  .command('webdriver.io')
+  .description('generate webdriver.io skeleton')
+  .action((path) => webdriverExt(path));
+
+module.exports = commander;

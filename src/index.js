@@ -1,7 +1,13 @@
 'use strict';
 
-const say = () => {
-    console.log('hello');
-}
+const runner = require('./cli');
 
-say();
+const cli = () => {
+  runner.parse(process.argv);
+
+  if(runner.args.length === 0) runner.help();
+};
+
+module.exports = {
+  cli: cli
+};
