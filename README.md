@@ -9,4 +9,4 @@ TEG is a tool for generate skeleton for fast start write tests.
 ## Usage
 
 ## License
-[a relative link ISC](LICENSE.md)
+[ISC](LICENSE.md)
