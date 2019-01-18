@@ -19,7 +19,7 @@ const logo = () => figle('TEG - qa tool', (err, data) => {
 });
 
 const version = () => {
-  Console.log(`version ${chalk.bgCyan(process.env.VERSION)}`);
+  Console.log(`Version: ${chalk.cyan(process.env.VERSION)}`);
 };
 
 // Show success message
