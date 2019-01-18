@@ -8,8 +8,11 @@ TEG is a tool for generate skeleton for fast start write tests.
 
 ## Usage
 
-Run generator with path where must be unzip ``` teg <option> <path> ```
-Run help comand ``` teg -h ```
+* Run generator with path where must be unzip ``` teg <option> <path> ```
+* Run help comand ``` teg -h ```
+
+## CHANGELOG
+[CHANGELOG](CHANGELOG.md)
 
 ## License
 [ISC](LICENSE.md)
