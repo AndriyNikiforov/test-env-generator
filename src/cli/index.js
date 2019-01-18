@@ -1,20 +1,25 @@
 const commander = require('commander');
-
 const { exectArch } = require('../generator/');
 const {
   help,
   logo,
   success,
+  version,
 } = require('../helpers/');
 
-// Show tool name
+// Show logo
 logo();
 
 commander
-  .version('1.0.0', '-v, --version');
+  .command('v')
+  .description('beautifully version showed')
+  .action(() => version());
 
 // Show all tool commands
-commander.on('--help', () => help());
+commander
+  .command('info')
+  .description('information about options')
+  .action(() => help());
 
 // Command for generate selenium skeleton
 commander
