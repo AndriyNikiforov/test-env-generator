@@ -11,6 +11,11 @@ TEG is a tool for generate skeleton for fast start write tests.
 * Run generator with path where must be unzip ``` teg <option> <path> ```
 * Run help comand ``` teg -h ```
 
+Options
+* selenium
+* appium
+* webdriver.io
+
 ## CHANGELOG
 [CHANGELOG](CHANGELOG.md)
 
