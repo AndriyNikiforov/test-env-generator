@@ -1,11 +1,12 @@
 {
   "name": "test-env-generator",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
     "build": "babel ./src -d ./lib",
-    "lint": "eslint ./src",
+    "lint:eslint": "eslint ./src",
+    "lint:jshint": "jshint ./src",
     "test": "mocha",
     "teg": "node index.js"
   },
@@ -16,13 +17,21 @@
     "qa",
     "generator",
     "testing",
-    "tests"
+    "tests",
+    "environment",
+    "appium",
+    "selenium",
+    "selenium-webdriver",
+    "webdriver.io",
+    "mocha"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AndriyNikiforov/test-env-generator"
   },
   "files": [
+    "CHANGELOG.md",
+    "FUTURES.md",
     "README.md",
     "LICENSE.md",
     "index.js",

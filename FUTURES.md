@@ -7,3 +7,4 @@ LIST of FUTURES
 * Refactoring
 * Update build project
 * Add git api for update assets
+* Add check version assets
