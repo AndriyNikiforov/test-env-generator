@@ -1,5 +1,12 @@
 const commander = require('commander');
 const { exectArch } = require('../generator/');
+
+const {
+  webdriverIO,
+  seleniumUpdate,
+  appiumUpdate,
+} = require('../api/git');
+
 const {
   help,
   logo,
@@ -10,10 +17,13 @@ const {
 // Show logo
 logo();
 
+// Show version package
 commander
   .command('v')
   .description('beautifully version showed')
-  .action(() => version());
+  .action(() => {
+    version();
+  });
 
 // Show all tool commands
 commander

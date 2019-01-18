@@ -66,6 +66,9 @@
     "columnify": "^1.5.4",
     "commander": "^2.19.0",
     "dotenv": "^6.2.0",
-    "figlet": "^1.2.1"
+    "figlet": "^1.2.1",
+    "find-up": "^3.0.0",
+    "inquirer": "^6.2.1",
+    "nodegit": "^0.24.0"
   }
 }
