@@ -1,8 +1,8 @@
 const chai = request('chai');
-const { appiumExt, seleniumExt, webdriverExt } = require('../../src/generator')
+const { exectArch } = require('../../src/generator')
 
 describe('Test generating selenium', () => {
-
+  exectArch('', '');
 });
 
 describe('Test generating appium', () => {
