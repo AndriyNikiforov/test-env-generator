@@ -14,5 +14,8 @@ TEG is a tool for generate skeleton for fast start write tests.
 ## CHANGELOG
 [CHANGELOG](CHANGELOG.md)
 
+## FUTURES
+[FUTURES](FUTURES.md)
+
 ## License
 [ISC](LICENSE.md)
