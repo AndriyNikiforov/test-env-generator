@@ -19,3 +19,6 @@ TEG is a tool for generate skeleton for fast start write tests.
 
 ## License
 [ISC](LICENSE.md)
+
+
+# Thanks for using !!
