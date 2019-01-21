@@ -75,7 +75,7 @@ commander
   .command('selenium <path>')
   .description('generate selenium skeleton')
   .action((path) => {
-    exectArch(path, '../assets/selblui.zip');
+    exectArch('../assets/selblui.zip', path);
     success();
   });
 
@@ -84,7 +84,7 @@ commander
   .command('appium <path>')
   .description('generate appium skeleton')
   .action((path) => {
-    exectArch(path, '../assets/appiumwdblui.zip');
+    exectArch('../assets/appiumwdblui.zip', path);
     success();
   });
 
@@ -95,7 +95,7 @@ commander
   .command('webdriver.io <path>')
   .description('generate webdriver.io skeleton')
   .action((path) => {
-    exectArch(path, '../assets/selwdioblui.zip');
+    exectArch('../assets/selwdioblui.zip', path);
     success();
   });
 
