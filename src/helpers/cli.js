@@ -53,9 +53,29 @@ const help = () => {
   Console.log(columns);
 };
 
+const gitVersion = () => {
+  const columns = columify([
+    {
+      command: chalk.cyan('selenium:last <path to generate>'),
+      about: chalk.cyan('generate zip file with git version skeleton'),
+    },
+    {
+      command: chalk.green('appium:last <path to generate>'),
+      about: chalk.green('generate zip file with git version skeleton'),
+    },
+    {
+      command: chalk.blue('webdriverIO:last <path to generate>'),
+      about: chalk.blue('generate zip file with git version skeleton'),
+    },
+  ]);
+
+  Console.log(columns);
+};
+
 module.exports = {
   logo,
   help,
   success,
   version,
+  gitVersion,
 };

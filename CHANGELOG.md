@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V1.2
+* Make better user interface
+* Refactoring
+* Add git api for generate assets
+
 ## V1.1
 * Add helper module.
 * Refactoring.

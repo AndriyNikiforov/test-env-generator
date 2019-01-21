@@ -1,5 +1,5 @@
 const commander = require('commander');
-const { exectArch } = require('../generator/');
+const { exectArch } = require('../zipapi/');
 
 const {
   webdriverIO,
@@ -12,7 +12,8 @@ const {
   logo,
   success,
   version,
-} = require('../helpers/');
+  gitVersion,
+} = require('../helpers/cli');
 
 // Show logo
 logo();
@@ -21,9 +22,7 @@ logo();
 commander
   .command('v')
   .description('beautifully version showed')
-  .action(() => {
-    version();
-  });
+  .action(() => version());
 
 // Show all tool commands
 commander
@@ -31,21 +30,26 @@ commander
   .description('information about options')
   .action(() => help());
 
+commander
+  .command('git:version')
+  .description('information about commands for generate git version skeleton')
+  .action(() => gitVersion());
+
 // Commands: git clone a last version of skeleton
 commander
   .command('selenium:last <path>')
   .description('git clone the last version of selenium skeleton')
-  .action(path => {});
+  .action(path => seleniumUpdate(path));
 
 commander
   .command('appium:last <path>')
   .description('git clone the last version of appium skeleton')
-  .action(path => {});
+  .action(path => appiumUpdate(path));
 
 commander
-  .command('webdriver.io:last <path>')
+  .command('webdriverIO:last <path>')
   .description('git clone the last version of webdrtiver.io skeleton')
-  .action(path => {});
+  .action(path => webdriverIO(path));
 // -------------------------------------------------------------------
 
 // Command for generate selenium skeleton

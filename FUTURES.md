@@ -2,9 +2,8 @@
 
 LIST of FUTURES
 
-## V1.5
-* Make better user interface
+## V1.3
 * Refactoring
-* Update build project
-* Add git api for update assets
-* Add check version assets
+* Generator vagrant files
+* Update ui
+* Add api documentation

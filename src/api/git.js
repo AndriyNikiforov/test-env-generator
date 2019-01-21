@@ -1,34 +1,33 @@
 const Git = require('nodegit');
-const Unzip = require('adm-zip');
 const Console = require('console');
-const { resolve } = require('path');
+const { makeArch } = require('../zipapi/');
 
-// Update appium asset
-const appiumUpdate = () => {
-  Git.Clone(process.env.GIT_REPOSITORY_APPIUM, './tmp')
+// Get to new appium asset
+const appiumUpdate = (path) => {
+  Git.Clone(process.env.GIT_REPOSITORY_APPIUM, path)
     .then((repository) => {
-      const zip = new Unzip();
       Console.log('Cloned ', repository.workdir());
+      makeArch(path, 'appium');
     })
     .catch(err => Console.error(err));
 };
 
-// Update selenium asset
-const seleniumUpdate = () => {
-  Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, './tmp')
+// Get to new selenium asset
+const seleniumUpdate = (path) => {
+  Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, path)
     .then((repository) => {
-      const zip = new Unzip();
       Console.log('Cloned ', repository.workdir());
+      makeArch(path, 'selenium');
     })
     .catch(err => Console.error(err));
 };
 
-// Update webdriverIO asset
-const webdriverIO = () => {
-  Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, './tmp')
+// Get to new webdriverIO asset
+const webdriverIO = (path) => {
+  Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, path)
     .then((repository) => {
-      const zip = new Unzip();
       Console.log('Cloned ', repository.workdir());
+      makeArch(path, 'webdriverIO');
     })
     .catch(err => Console.error(err));
 };
