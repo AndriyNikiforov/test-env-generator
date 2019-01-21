@@ -28,4 +28,7 @@ Options
 ## Contributing guide
 [CONTRIBUTING](CONTRIBUTING.md)
 
+## Bugs
+If you found bug or problem, please make issues in git repository. And if you can please make review my code.
+
 # Thanks for using !!
