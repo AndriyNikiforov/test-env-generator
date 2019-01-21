@@ -25,5 +25,7 @@ Options
 ## License
 [ISC](LICENSE.md)
 
+## Contributing guide
+[CONTRIBUTING](CONTRIBUTING.md)
 
 # Thanks for using !!
