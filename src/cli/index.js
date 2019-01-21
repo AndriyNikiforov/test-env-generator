@@ -31,6 +31,23 @@ commander
   .description('information about options')
   .action(() => help());
 
+// Commands: git clone a last version of skeleton
+commander
+  .command('selenium:last <path>')
+  .description('git clone the last version of selenium skeleton')
+  .action(path => {});
+
+commander
+  .command('appium:last <path>')
+  .description('git clone the last version of appium skeleton')
+  .action(path => {});
+
+commander
+  .command('webdriver.io:last <path>')
+  .description('git clone the last version of webdrtiver.io skeleton')
+  .action(path => {});
+// -------------------------------------------------------------------
+
 // Command for generate selenium skeleton
 commander
   .command('selenium <path>')
