@@ -2,7 +2,10 @@ const Git = require('nodegit');
 const Console = require('console');
 const { makeArch } = require('../zipapi/');
 
-// Get to new appium asset
+/**
+ * @description Clone from git appium skeleton and making zip archive
+ * @param {String} path
+ */
 const appiumUpdate = (path) => {
   Git.Clone(process.env.GIT_REPOSITORY_APPIUM, path)
     .then((repository) => {
@@ -12,7 +15,10 @@ const appiumUpdate = (path) => {
     .catch(err => Console.error(err));
 };
 
-// Get to new selenium asset
+/**
+ * @description Clone from git selenium skeleton and making zip archive
+ * @param {String} path
+ */
 const seleniumUpdate = (path) => {
   Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, path)
     .then((repository) => {
@@ -22,7 +28,10 @@ const seleniumUpdate = (path) => {
     .catch(err => Console.error(err));
 };
 
-// Get to new webdriverIO asset
+/**
+ * @description Clone from git webdriver.io skeleton and making zip archive
+ * @param {String} path
+ */
 const webdriverIO = (path) => {
   Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, path)
     .then((repository) => {

@@ -15,44 +15,62 @@ const {
   gitVersion,
 } = require('../helpers/cli');
 
-// Show logo
+/**
+ * @description Show logo
+ */
 logo();
 
-// Show version package
+/**
+ * @description Show version package
+ */
 commander
   .command('v')
   .description('beautifully version showed')
   .action(() => version());
 
-// Show all tool commands
+/**
+ * @description  Show all tool commands
+ */
 commander
   .command('info')
   .description('information about options')
   .action(() => help());
 
+/**
+ * @description Show information about commands for generate git version skeleton
+ */
 commander
   .command('git:version')
   .description('information about commands for generate git version skeleton')
   .action(() => gitVersion());
 
-// Commands: git clone a last version of skeleton
+/**
+ * @description Command git clone a last version of skeleton
+ */
 commander
   .command('selenium:last <path>')
   .description('git clone the last version of selenium skeleton')
   .action(path => seleniumUpdate(path));
 
+/**
+ * @description Command git clone a last version of skeleton
+ */
 commander
   .command('appium:last <path>')
   .description('git clone the last version of appium skeleton')
   .action(path => appiumUpdate(path));
 
+/**
+ * @description Command git clone a last version of skeleton
+ */
 commander
   .command('webdriverIO:last <path>')
   .description('git clone the last version of webdrtiver.io skeleton')
   .action(path => webdriverIO(path));
-// -------------------------------------------------------------------
 
-// Command for generate selenium skeleton
+/**
+ * @description Command for generate selenium skeleton
+ */
 commander
   .command('selenium <path>')
   .description('generate selenium skeleton')
@@ -70,7 +88,9 @@ commander
     success();
   });
 
-// Command for generate webdriver.io skeleton
+/**
+ * @description Command for generate webdriver.io skeleton
+ */
 commander
   .command('webdriver.io <path>')
   .description('generate webdriver.io skeleton')

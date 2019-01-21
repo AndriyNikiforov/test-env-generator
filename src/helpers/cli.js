@@ -7,7 +7,9 @@ const columify = require('columnify');
 // Init env variables
 dotenv.load();
 
-// Show logo
+/**
+ * @description Show logo
+ */
 const logo = () => figle('TEG - qa tool', (err, data) => {
   if (err) {
     Console.error('Something went wrong...');
@@ -18,11 +20,16 @@ const logo = () => figle('TEG - qa tool', (err, data) => {
   Console.log(data);
 });
 
+/**
+ * @description Show version
+ */
 const version = () => {
   Console.log(`Version: ${chalk.cyan(process.env.VERSION)}`);
 };
 
-// Show success message
+/**
+ * @description Show success message
+ */
 const success = () => figle('Success', (err, data) => {
   if (err) {
     Console.error('Something went wrong...');
@@ -33,7 +40,9 @@ const success = () => figle('Success', (err, data) => {
   Console.log(data);
 });
 
-// Show help block
+/**
+ * @description Show help block
+ */
 const help = () => {
   const columns = columify([
     {
@@ -53,6 +62,9 @@ const help = () => {
   Console.log(columns);
 };
 
+/**
+ * @description Show information about commands for generate git version skeleton
+ */
 const gitVersion = () => {
   const columns = columify([
     {

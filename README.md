@@ -28,6 +28,9 @@ Options
 ## Contributing guide
 [CONTRIBUTING](CONTRIBUTING.md)
 
+## Api documentation
+[API](API.md)
+
 ## Bugs
 If you found bug or problem, please make issues in git repository. And if you can please make review my code.
 
