@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V1.3
+* Refactoring
+* Update api
+* Add api documentation
+
 ## V1.2
 * Make better user interface
 * Refactoring

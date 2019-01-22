@@ -1,11 +1,6 @@
+const zipApi = require('../zipapi/');
+const gitApi = require('../api/git');
 const commander = require('commander');
-const { exectArch } = require('../zipapi/');
-
-const {
-  webdriverIO,
-  seleniumUpdate,
-  appiumUpdate,
-} = require('../api/git');
 
 const {
   help,
@@ -50,7 +45,7 @@ commander
 commander
   .command('selenium:last <path>')
   .description('git clone the last version of selenium skeleton')
-  .action(path => seleniumUpdate(path));
+  .action(path => gitApi.seleniumUpdate(path));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -58,7 +53,7 @@ commander
 commander
   .command('appium:last <path>')
   .description('git clone the last version of appium skeleton')
-  .action(path => appiumUpdate(path));
+  .action(path => gitApi.appiumUpdate(path));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -66,7 +61,7 @@ commander
 commander
   .command('webdriverIO:last <path>')
   .description('git clone the last version of webdrtiver.io skeleton')
-  .action(path => webdriverIO(path));
+  .action(path => gitApi.webdriverIO(path));
 
 /**
  * @description Command for generate selenium skeleton
@@ -75,16 +70,18 @@ commander
   .command('selenium <path>')
   .description('generate selenium skeleton')
   .action((path) => {
-    exectArch('../assets/selblui.zip', path);
+    zipApi.makeArch('../assets/selblui.zip', path);
     success();
   });
 
-// Command for generate appium skeleton
+/**
+ * @description Command for generate appium skeleton
+ */
 commander
   .command('appium <path>')
   .description('generate appium skeleton')
   .action((path) => {
-    exectArch('../assets/appiumwdblui.zip', path);
+    zipApi.makeArch('../assets/appiumwdblui.zip', path);
     success();
   });
 
@@ -95,7 +92,7 @@ commander
   .command('webdriver.io <path>')
   .description('generate webdriver.io skeleton')
   .action((path) => {
-    exectArch('../assets/selwdioblui.zip', path);
+    zipApi.makeArch('../assets/selwdioblui.zip', path);
     success();
   });
 

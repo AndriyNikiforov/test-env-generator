@@ -1,50 +1,55 @@
-## Functions
+<a name="GitApi"></a>
 
-<dl>
-<dt><a href="#appiumUpdate">appiumUpdate(path)</a></dt>
-<dd><p>Clone from git appium skeleton and making zip archive</p>
-</dd>
-<dt><a href="#seleniumUpdate">seleniumUpdate(path)</a></dt>
-<dd><p>Clone from git selenium skeleton and making zip archive</p>
-</dd>
-<dt><a href="#webdriverIO">webdriverIO(path)</a></dt>
-<dd><p>Clone from git webdriver.io skeleton and making zip archive</p>
-</dd>
-</dl>
+## GitApi
+**Kind**: global class
 
-<a name="appiumUpdate"></a>
+- [GitApi](#gitapi)
+  - [gitApi.appiumUpdate(path)](#gitapiappiumupdatepath)
+  - [gitApi.seleniumUpdate(path)](#gitapiseleniumupdatepath)
+  - [gitApi.webdriverIO(path)](#gitapiwebdriveriopath)
+- [Functions](#functions)
+- [logo()](#logo)
+- [version()](#version)
+- [success()](#success)
+- [help()](#help)
+- [gitVersion()](#gitversion)
+- [Helper](#helper)
+  - [helper.checkFolder(path)](#helpercheckfolderpath)
+  - [helper.exectArch(pathArch, pathToExt)](#helperexectarchpatharch-pathtoext)
+  - [helper.makeArch(path, name)](#helpermakearchpath-name)
 
-## appiumUpdate(path)
+<a name="GitApi+appiumUpdate"></a>
+
+### gitApi.appiumUpdate(path)
 Clone from git appium skeleton and making zip archive
 
-**Kind**: global function
+**Kind**: instance method of [<code>GitApi</code>](#GitApi)
 
 | Param | Type |
 | --- | --- |
 | path | <code>String</code> |
 
-<a name="seleniumUpdate"></a>
+<a name="GitApi+seleniumUpdate"></a>
 
-## seleniumUpdate(path)
+### gitApi.seleniumUpdate(path)
 Clone from git selenium skeleton and making zip archive
 
-**Kind**: global function
+**Kind**: instance method of [<code>GitApi</code>](#GitApi)
 
 | Param | Type |
 | --- | --- |
 | path | <code>String</code> |
 
-<a name="webdriverIO"></a>
+<a name="GitApi+webdriverIO"></a>
 
-## webdriverIO(path)
+### gitApi.webdriverIO(path)
 Clone from git webdriver.io skeleton and making zip archive
 
-**Kind**: global function
+**Kind**: instance method of [<code>GitApi</code>](#GitApi)
 
 | Param | Type |
 | --- | --- |
 | path | <code>String</code> |
-
 
 ## Functions
 
@@ -97,35 +102,45 @@ Show information about commands for generate git version skeleton
 
 **Kind**: global function
 
-## Functions
+<a name="Helper"></a>
 
-<dl>
-<dt><a href="#exectArch">exectArch(pathArch, pathToExt)</a></dt>
-<dd><p>Execute zip archive</p>
-</dd>
-<dt><a href="#makeArch">makeArch(path, name)</a></dt>
-<dd><p>Make zip archive</p>
-</dd>
-</dl>
+## Helper
+**Kind**: global class
 
-<a name="exectArch"></a>
+* [Helper](#Helper)
+    * [.checkFolder(path)](#Helper+checkFolder)
+    * [.exectArch(pathArch, pathToExt)](#Helper+exectArch)
+    * [.makeArch(path, name)](#Helper+makeArch)
 
-## exectArch(pathArch, pathToExt)
+<a name="Helper+checkFolder"></a>
+
+### helper.checkFolder(path)
+Check folder exist
+
+**Kind**: instance method of [<code>Helper</code>](#Helper)
+
+| Param | Type |
+| --- | --- |
+| path | <code>String</code> |
+
+<a name="Helper+exectArch"></a>
+
+### helper.exectArch(pathArch, pathToExt)
 Execute zip archive
 
-**Kind**: global function
+**Kind**: instance method of [<code>Helper</code>](#Helper)
 
 | Param | Type |
 | --- | --- |
 | pathArch | <code>String</code> |
 | pathToExt | <code>String</code> |
 
-<a name="makeArch"></a>
+<a name="Helper+makeArch"></a>
 
-## makeArch(path, name)
+### helper.makeArch(path, name)
 Make zip archive
 
-**Kind**: global function
+**Kind**: instance method of [<code>Helper</code>](#Helper)
 
 | Param | Type |
 | --- | --- |
