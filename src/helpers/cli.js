@@ -1,11 +1,7 @@
 const figle = require('figlet');
 const chalk = require('chalk').default;
-const dotenv = require('dotenv');
 const Console = require('console');
 const columify = require('columnify');
-
-// Init env variables
-dotenv.load();
 
 /**
  * @description Show logo
@@ -24,7 +20,7 @@ const logo = () => figle('TEG - qa tool', (err, data) => {
  * @description Show version
  */
 const version = () => {
-  Console.log(`Version: ${chalk.cyan(process.env.VERSION)}`);
+  Console.log(`Version: ${chalk.cyan('1.3')}`);
 };
 
 /**

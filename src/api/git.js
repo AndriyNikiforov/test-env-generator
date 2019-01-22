@@ -12,7 +12,7 @@ class GitApi {
    */
   appiumUpdate() {
     fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_APPIUM, './tmp')
+    Git.Clone('https://github.com/AndriyNikiforov/appiumwdblui.git', './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
         zipApi.makeArch('appium');
@@ -25,7 +25,7 @@ class GitApi {
    */
   seleniumUpdate() {
     fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, './tmp')
+    Git.Clone('https://github.com/AndriyNikiforov/selblui.git', './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
         zipApi.makeArch('selenium');
@@ -38,7 +38,7 @@ class GitApi {
    */
   webdriverIO() {
     fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, './tmp')
+    Git.Clone('https://github.com/AndriyNikiforov/selwdioblui.git', './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
         zipApi.makeArch('webdriverIO');
