@@ -1,4 +1,3 @@
-const fs = require('fs-extra');
 const Unzip = require('adm-zip');
 const Console = require('console');
 const zipFolder = require('zip-folder');
@@ -9,17 +8,6 @@ const { resolve } = require('path');
  */
 class Helper {
   /**
-   * @description Check folder exist
-   * @param {String} path
-   */
-  checkFolder(path) {
-    fs.emptyDir(path, err => {
-      if (err) return Console.error(err);
-      Console.log('SUCCESS');
-    });
-  }
-
-  /**
    * @description Execute zip archive
    * @param {String} pathArch
    * @param {String} pathToExt
@@ -27,7 +15,6 @@ class Helper {
   exectArch(pathArch, pathToExt)  {
     const zip = new Unzip(resolve(__dirname, pathArch));
     zip.extractAllTo(pathToExt, true);
-    checkFolder(pathToExt);
   }
 
   /**
