@@ -7,44 +7,41 @@ const zipApi = require('../zipapi/');
  * @class GitApi
  */
 class GitApi {
+  constructor() {
+    fs.mkdir('./tmp');
+  }
   /**
    * @description Clone from git appium skeleton and making zip archive
-   * @param {String} path
    */
-  appiumUpdate(path) {
-    fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_APPIUM, process.env.TMP)
+  appiumUpdate() {
+    Git.Clone(process.env.GIT_REPOSITORY_APPIUM, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(process.env.TMP, 'appium');
+        zipApi.makeArch('appium');
       })
       .catch(err => Console.error(err));
   }
 
   /**
    * @description Clone from git selenium skeleton and making zip archive
-   * @param {String} path
    */
-  seleniumUpdate(path) {
-    fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, process.env.TMP)
+  seleniumUpdate() {
+    Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(process.env.TMP, 'selenium');
+        zipApi.makeArch('selenium');
       })
       .catch(err => Console.error(err));
   }
 
   /**
    * @description Clone from git webdriver.io skeleton and making zip archive
-   * @param {String} path
    */
-  webdriverIO(path) {
-    fs.mkdir('./tmp');
-    Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, process.env.TMP)
+  webdriverIO() {
+    Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(process.env.TMP, 'webdriverIO');
+        zipApi.makeArch('webdriverIO');
       })
       .catch(err => Console.error(err));
   }

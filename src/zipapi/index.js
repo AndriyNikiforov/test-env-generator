@@ -20,16 +20,15 @@ class Helper {
 
   /**
    * @description Make zip archive
-   * @param {String} path
    * @param {String} name
    */
-  makeArch(path, name) {
-    zipFolder(resolve(__dirname, path), `./${name}.zip`, (err) => {
-      if (err) Console.log(err);
-      fs.remove(path, err => {
-         if (err) return Console.error(err);
-         Console.log('EXCELLENT');
-      });
+  makeArch(name) {
+    zipFolder('./tmp', `./${name}.zip`, (err) => {
+      if (err) Console.log('Error: ', err);
+      fs.remove('./tmp', err => {
+        if (err) return Console.error(err);
+        Console.log('EXCELLENT');
+       });
     });
   }
 }
