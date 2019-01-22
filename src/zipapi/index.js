@@ -1,3 +1,4 @@
+const fs = require('fs-extra');
 const Unzip = require('adm-zip');
 const Console = require('console');
 const zipFolder = require('zip-folder');
@@ -32,7 +33,5 @@ class Helper {
     });
   }
 }
-
-
 
 module.exports = new Helper();

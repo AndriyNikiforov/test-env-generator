@@ -53,6 +53,4 @@ class GitApi {
   }
 }
 
-
-
 module.exports = new GitApi();
