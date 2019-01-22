@@ -16,8 +16,7 @@ class GitApi {
     Git.Clone(process.env.GIT_REPOSITORY_APPIUM, process.env.TMP)
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(path, 'appium');
-        fs.remove('./tmp');
+        zipApi.makeArch(process.env.TMP, 'appium');
       })
       .catch(err => Console.error(err));
   }
@@ -31,8 +30,7 @@ class GitApi {
     Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, process.env.TMP)
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(path, 'selenium');
-        fs.remove('./tmp');
+        zipApi.makeArch(process.env.TMP, 'selenium');
       })
       .catch(err => Console.error(err));
   }
@@ -46,8 +44,7 @@ class GitApi {
     Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, process.env.TMP)
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch(path, 'webdriverIO');
-        fs.remove('./tmp');
+        zipApi.makeArch(process.env.TMP, 'webdriverIO');
       })
       .catch(err => Console.error(err));
   }

@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "1.2.8",
+  "version": "1.2.8-b",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
@@ -73,7 +73,6 @@
     "dotenv": "^6.2.0",
     "figlet": "^1.2.1",
     "fs-extra": "^7.0.1",
-    "inquirer": "^6.2.1",
     "nodegit": "^0.24.0",
     "zip-folder": "^1.0.0"
   }

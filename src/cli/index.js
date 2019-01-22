@@ -43,25 +43,25 @@ commander
  * @description Command git clone a last version of skeleton
  */
 commander
-  .command('selenium:last <path>')
+  .command('selenium:last')
   .description('git clone the last version of selenium skeleton')
-  .action(path => gitApi.seleniumUpdate(path));
+  .action(() => gitApi.seleniumUpdate());
 
 /**
  * @description Command git clone a last version of skeleton
  */
 commander
-  .command('appium:last <path>')
+  .command('appium:last')
   .description('git clone the last version of appium skeleton')
-  .action(path => gitApi.appiumUpdate(path));
+  .action(() => gitApi.appiumUpdate());
 
 /**
  * @description Command git clone a last version of skeleton
  */
 commander
-  .command('webdriverIO:last <path>')
+  .command('webdriverIO:last')
   .description('git clone the last version of webdrtiver.io skeleton')
-  .action(path => gitApi.webdriverIO(path));
+  .action(() => gitApi.webdriverIO());
 
 /**
  * @description Command for generate selenium skeleton
