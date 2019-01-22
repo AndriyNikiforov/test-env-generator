@@ -7,13 +7,11 @@ const zipApi = require('../zipapi/');
  * @class GitApi
  */
 class GitApi {
-  constructor() {
-    fs.mkdir('./tmp');
-  }
   /**
    * @description Clone from git appium skeleton and making zip archive
    */
   appiumUpdate() {
+    fs.mkdir('./tmp');
     Git.Clone(process.env.GIT_REPOSITORY_APPIUM, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
@@ -26,6 +24,7 @@ class GitApi {
    * @description Clone from git selenium skeleton and making zip archive
    */
   seleniumUpdate() {
+    fs.mkdir('./tmp');
     Git.Clone(process.env.GIT_REPOSITORY_SELENIUM, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
@@ -38,6 +37,7 @@ class GitApi {
    * @description Clone from git webdriver.io skeleton and making zip archive
    */
   webdriverIO() {
+    fs.mkdir('./tmp');
     Git.Clone(process.env.GIT_REPOSITORY_WEBDRIVER, './tmp')
       .then((repository) => {
         Console.log('Cloned ', repository.workdir());
