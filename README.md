@@ -16,6 +16,11 @@ Options
 * appium
 * webdriver.io
 
+## Help command
+
+* ```teg info``` - show base information about commands
+* ```teg git:version``` - show information about command that is used git version
+
 ## CHANGELOG
 [CHANGELOG](CHANGELOG.md)
 

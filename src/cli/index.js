@@ -1,6 +1,6 @@
+const commander = require('commander');
 const zipApi = require('../zipapi/');
 const gitApi = require('../api/git');
-const commander = require('commander');
 
 const {
   help,

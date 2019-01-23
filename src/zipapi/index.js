@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 const fs = require('fs-extra');
 const Unzip = require('adm-zip');
 const Console = require('console');
@@ -13,7 +14,7 @@ class Helper {
    * @param {String} pathArch
    * @param {String} pathToExt
    */
-  exectArch(pathArch, pathToExt)  {
+  exectArch(pathArch, pathToExt) {
     const zip = new Unzip(resolve(__dirname, pathArch));
     zip.extractAllTo(pathToExt, true);
   }
@@ -25,10 +26,10 @@ class Helper {
   makeArch(name) {
     zipFolder('./tmp', `./${name}.zip`, (err) => {
       if (err) Console.log('Error: ', err);
-      fs.remove('./tmp', err => {
-        if (err) return Console.error(err);
+      fs.remove('./tmp', (error) => {
+        if (error) Console.error(error);
         Console.log('EXCELLENT');
-       });
+      });
     });
   }
 }

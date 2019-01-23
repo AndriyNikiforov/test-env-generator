@@ -1,23 +1,28 @@
 const fs = require('fs-extra');
 const Git = require('nodegit');
-const Console = require('console');
+const { log, error } = require('console');
 const zipApi = require('../zipapi/');
 
 /**
  * @class GitApi
  */
 class GitApi {
+  constructor() {
+    this.clone = Git.Clone;
+    this.makeArch = zipApi.makeArch;
+  }
+
   /**
    * @description Clone from git appium skeleton and making zip archive
    */
   appiumUpdate() {
     fs.mkdir('./tmp');
-    Git.Clone('https://github.com/AndriyNikiforov/appiumwdblui.git', './tmp')
+    this.clone('https://github.com/AndriyNikiforov/appiumwdblui.git', './tmp')
       .then((repository) => {
-        Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch('appium');
+        log('Cloned ', repository.workdir());
+        this.makeArch('appium');
       })
-      .catch(err => Console.error(err));
+      .catch(err => error(err));
   }
 
   /**
@@ -25,12 +30,12 @@ class GitApi {
    */
   seleniumUpdate() {
     fs.mkdir('./tmp');
-    Git.Clone('https://github.com/AndriyNikiforov/selblui.git', './tmp')
+    this.clone('https://github.com/AndriyNikiforov/selblui.git', './tmp')
       .then((repository) => {
-        Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch('selenium');
+        log('Cloned ', repository.workdir());
+        this.makeArch('selenium');
       })
-      .catch(err => Console.error(err));
+      .catch(err => error(err));
   }
 
   /**
@@ -38,12 +43,12 @@ class GitApi {
    */
   webdriverIO() {
     fs.mkdir('./tmp');
-    Git.Clone('https://github.com/AndriyNikiforov/selwdioblui.git', './tmp')
+    this.clone('https://github.com/AndriyNikiforov/selwdioblui.git', './tmp')
       .then((repository) => {
-        Console.log('Cloned ', repository.workdir());
-        zipApi.makeArch('webdriverIO');
+        log('Cloned ', repository.workdir());
+        this.makeArch('webdriverIO');
       })
-      .catch(err => Console.error(err));
+      .catch(err => error(err));
   }
 }
 

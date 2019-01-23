@@ -1,26 +1,26 @@
 const figle = require('figlet');
 const chalk = require('chalk').default;
-const Console = require('console');
 const columify = require('columnify');
+const { log, error, dir } = require('console');
 
 /**
  * @description Show logo
  */
 const logo = () => figle('TEG - qa tool', (err, data) => {
   if (err) {
-    Console.error('Something went wrong...');
-    Console.dir(err);
+    error('Something went wrong...');
+    dir(err);
     return;
   }
 
-  Console.log(data);
+  log(data);
 });
 
 /**
  * @description Show version
  */
 const version = () => {
-  Console.log(`Version: ${chalk.cyan('1.3')}`);
+  log(`Version: ${chalk.cyan('1.3')}`);
 };
 
 /**
@@ -28,12 +28,12 @@ const version = () => {
  */
 const success = () => figle('Success', (err, data) => {
   if (err) {
-    Console.error('Something went wrong...');
-    Console.dir(err);
+    error('Something went wrong...');
+    dir(err);
     return;
   }
 
-  Console.log(data);
+  log(data);
 });
 
 /**
@@ -55,7 +55,7 @@ const help = () => {
     },
   ]);
 
-  Console.log(columns);
+  log(columns);
 };
 
 /**
@@ -77,7 +77,7 @@ const gitVersion = () => {
     },
   ]);
 
-  Console.log(columns);
+  log(columns);
 };
 
 module.exports = {
