@@ -4,103 +4,72 @@
 **Kind**: global class
 
 - [GitApi](#gitapi)
-  - [gitApi.appiumUpdate(path)](#gitapiappiumupdatepath)
-  - [gitApi.seleniumUpdate(path)](#gitapiseleniumupdatepath)
-  - [gitApi.webdriverIO(path)](#gitapiwebdriveriopath)
-- [Functions](#functions)
-- [logo()](#logo)
-- [version()](#version)
-- [success()](#success)
-- [help()](#help)
-- [gitVersion()](#gitversion)
+  - [gitApi.appiumUpdate()](#gitapiappiumupdate)
+  - [gitApi.seleniumUpdate()](#gitapiseleniumupdate)
+  - [gitApi.webdriverIO()](#gitapiwebdriverio)
+- [Cli](#cli)
+  - [cli.logo()](#clilogo)
+  - [cli.success()](#clisuccess)
+  - [cli.help()](#clihelp)
+  - [cli.gitVersion()](#cligitversion)
 - [Helper](#helper)
-  - [helper.checkFolder(path)](#helpercheckfolderpath)
   - [helper.exectArch(pathArch, pathToExt)](#helperexectarchpatharch-pathtoext)
-  - [helper.makeArch(path, name)](#helpermakearchpath-name)
+  - [helper.makeArch(name)](#helpermakearchname)
 
 <a name="GitApi+appiumUpdate"></a>
 
-### gitApi.appiumUpdate(path)
+### gitApi.appiumUpdate()
 Clone from git appium skeleton and making zip archive
 
 **Kind**: instance method of [<code>GitApi</code>](#GitApi)
-
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> |
-
 <a name="GitApi+seleniumUpdate"></a>
 
-### gitApi.seleniumUpdate(path)
+### gitApi.seleniumUpdate()
 Clone from git selenium skeleton and making zip archive
 
 **Kind**: instance method of [<code>GitApi</code>](#GitApi)
-
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> |
-
 <a name="GitApi+webdriverIO"></a>
 
-### gitApi.webdriverIO(path)
+### gitApi.webdriverIO()
 Clone from git webdriver.io skeleton and making zip archive
 
 **Kind**: instance method of [<code>GitApi</code>](#GitApi)
 
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> |
+<a name="Cli"></a>
 
-## Functions
+## Cli
+**Kind**: global class
 
-<dl>
-<dt><a href="#logo">logo()</a></dt>
-<dd><p>Show logo</p>
-</dd>
-<dt><a href="#version">version()</a></dt>
-<dd><p>Show version</p>
-</dd>
-<dt><a href="#success">success()</a></dt>
-<dd><p>Show success message</p>
-</dd>
-<dt><a href="#help">help()</a></dt>
-<dd><p>Show help block</p>
-</dd>
-<dt><a href="#gitVersion">gitVersion()</a></dt>
-<dd><p>Show information about commands for generate git version skeleton</p>
-</dd>
-</dl>
+* [Cli](#Cli)
+    * [.logo()](#Cli+logo)
+    * [.success()](#Cli+success)
+    * [.help()](#Cli+help)
+    * [.gitVersion()](#Cli+gitVersion)
 
-<a name="logo"></a>
+<a name="Cli+logo"></a>
 
-## logo()
+### cli.logo()
 Show logo
 
-**Kind**: global function
-<a name="version"></a>
+**Kind**: instance method of [<code>Cli</code>](#Cli)
+<a name="Cli+success"></a>
 
-## version()
-Show version
-
-**Kind**: global function
-<a name="success"></a>
-
-## success()
+### cli.success()
 Show success message
 
-**Kind**: global function
-<a name="help"></a>
+**Kind**: instance method of [<code>Cli</code>](#Cli)
+<a name="Cli+help"></a>
 
-## help()
+### cli.help()
 Show help block
 
-**Kind**: global function
-<a name="gitVersion"></a>
+**Kind**: instance method of [<code>Cli</code>](#Cli)
+<a name="Cli+gitVersion"></a>
 
-## gitVersion()
+### cli.gitVersion()
 Show information about commands for generate git version skeleton
 
-**Kind**: global function
+**Kind**: instance method of [<code>Cli</code>](#Cli)
 
 <a name="Helper"></a>
 
@@ -108,20 +77,8 @@ Show information about commands for generate git version skeleton
 **Kind**: global class
 
 * [Helper](#Helper)
-    * [.checkFolder(path)](#Helper+checkFolder)
     * [.exectArch(pathArch, pathToExt)](#Helper+exectArch)
-    * [.makeArch(path, name)](#Helper+makeArch)
-
-<a name="Helper+checkFolder"></a>
-
-### helper.checkFolder(path)
-Check folder exist
-
-**Kind**: instance method of [<code>Helper</code>](#Helper)
-
-| Param | Type |
-| --- | --- |
-| path | <code>String</code> |
+    * [.makeArch(name)](#Helper+makeArch)
 
 <a name="Helper+exectArch"></a>
 
@@ -137,12 +94,12 @@ Execute zip archive
 
 <a name="Helper+makeArch"></a>
 
-### helper.makeArch(path, name)
+### helper.makeArch(name)
 Make zip archive
 
 **Kind**: instance method of [<code>Helper</code>](#Helper)
 
 | Param | Type |
 | --- | --- |
-| path | <code>String</code> |
 | name | <code>String</code> |
+

@@ -4,6 +4,9 @@ const chalk = require('chalk').default;
 const columify = require('columnify');
 const { log, error, dir } = require('console');
 
+/**
+ * @class Cli
+ */
 class Cli {
   /**
   * @description Show logo
