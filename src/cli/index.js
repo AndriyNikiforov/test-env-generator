@@ -2,18 +2,12 @@ const commander = require('commander');
 const zipApi = require('../zipapi/');
 const gitApi = require('../api/git');
 
-const {
-  help,
-  logo,
-  success,
-  version,
-  gitVersion,
-} = require('../helpers/cli');
+const cli = require('../helpers/cli');
 
 /**
  * @description Show logo
  */
-logo();
+cli.logo();
 
 /**
  * @description Show version package
@@ -21,7 +15,7 @@ logo();
 commander
   .command('v')
   .description('beautifully version showed')
-  .action(() => version());
+  .action(() => cli.version());
 
 /**
  * @description  Show all tool commands
@@ -29,7 +23,7 @@ commander
 commander
   .command('info')
   .description('information about options')
-  .action(() => help());
+  .action(() => cli.help());
 
 /**
  * @description Show information about commands for generate git version skeleton
@@ -37,7 +31,7 @@ commander
 commander
   .command('git:version')
   .description('information about commands for generate git version skeleton')
-  .action(() => gitVersion());
+  .action(() => cli.gitVersion());
 
 /**
  * @description Command git clone a last version of skeleton
@@ -71,7 +65,7 @@ commander
   .description('generate selenium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selblui.zip', path);
-    success();
+    cli.success();
   });
 
 /**
@@ -82,7 +76,7 @@ commander
   .description('generate appium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/appiumwdblui.zip', path);
-    success();
+    cli.success();
   });
 
 /**
@@ -93,7 +87,7 @@ commander
   .description('generate webdriver.io skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selwdioblui.zip', path);
-    success();
+    cli.success();
   });
 
 module.exports = commander;
