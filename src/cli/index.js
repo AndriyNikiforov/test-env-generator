@@ -1,7 +1,7 @@
 const commander = require('commander');
 const zipApi = require('../zipapi/');
 const gitApi = require('../api/git');
-
+const docApi = require('../api/doc');
 const cli = require('../helpers/cli');
 
 /**
@@ -89,5 +89,13 @@ commander
     zipApi.exectArch('../assets/selwdioblui.zip', path);
     cli.success();
   });
+
+/**
+* @description Command for generate test case template
+*/
+commander
+  .command('doc:tc')
+  .description('generate test case template')
+  .action(() => docApi.makeFile());
 
 module.exports = commander;

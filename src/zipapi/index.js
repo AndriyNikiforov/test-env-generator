@@ -32,6 +32,18 @@ class Helper {
       });
     });
   }
+
+  /**
+   * @description Make user skeleton archive
+   * @param {String} name
+   * @param {String} path
+   */
+  userVersionArch(name, path) {
+    zipFolder(path, name, (err) => {
+      if (err) Console.log('Error: ', err);
+      Console.log('EXCELLENT');
+    });
+  }
 }
 
 module.exports = new Helper();
