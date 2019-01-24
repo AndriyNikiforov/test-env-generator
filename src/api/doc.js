@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 const fs = require('fs-extra');
-
+const cloudConvert = require('cloudconvert');
 const { resolve } = require('path');
 const { log, error } = require('console');
 
