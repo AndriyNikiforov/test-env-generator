@@ -1,26 +1,30 @@
 const fs = require('fs-extra');
-const chai = require('chai');
 const Unzip = require('adm-zip');
+const { assert } = require('chai');
 const { resolve } = require('path');
 const zipApi = require('../src/api/zip');
+
+const MAKE_ARCH_PATH = './test/tmp.zip';
+const EXEC_ARCH_PATH = './test/ziptmp';
 
 describe('Test zip', () => {
   it('make zip', () => {
     zipApi.makeArch('./test/tmp');
-    fs.access('./test/tmp.zip', (error) => {
-      chai.assert.isNull(error);
-      fs.remove('./test/tmp.zip');
+    fs.access(MAKE_ARCH_PATH, (error) => {
+      assert.isNull(error);
+      fs.remove(MAKE_ARCH_PATH);
     });
   });
 
+  before(() => fs.mkdir(EXEC_ARCH_PATH));
+
   it('exect zip', () => {
-    fs.mkdir('./test/ziptmp');
     const zip = new Unzip(resolve(__dirname, './selblui.zip'));
-    zip.extractAllTo('./test/ziptmp', true);
+    zip.extractAllTo(EXEC_ARCH_PATH, true);
 
     fs.access('./test/ziptmp/selblui/README.md', (err) => {
-      chai.assert.isNull(err);
-      fs.remove('./test/ziptmp');
+      assert.isNull(err);
+      fs.remove(EXEC_ARCH_PATH);
     });
   });
 });

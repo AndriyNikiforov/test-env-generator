@@ -6,7 +6,7 @@ const gitApi = require('../api/git');
 /**
  * @description Show logo
  */
-cli.logo();
+cli.showLogo('TEG - qa tool');
 
 /**
  * @description Show version package
@@ -64,7 +64,7 @@ commander
   .description('generate selenium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selblui.zip', path);
-    cli.success();
+    cli.showLogo('Success');
   });
 
 /**
@@ -75,7 +75,7 @@ commander
   .description('generate appium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/appiumwdblui.zip', path);
-    cli.success();
+    cli.showLogo('Success');
   });
 
 /**
@@ -86,7 +86,7 @@ commander
   .description('generate webdriver.io skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selwdioblui.zip', path);
-    cli.success();
+    cli.showLogo('Success');
   });
 
 module.exports = commander;

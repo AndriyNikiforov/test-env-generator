@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const chai = require('chai');
 const Git = require('nodegit');
-const Console = require('console');
+const { error } = require('console');
 
 describe('Test git api', () => {
   before(() => fs.mkdir('./test/tmp'));
@@ -15,6 +15,6 @@ describe('Test git api', () => {
 
       fs.remove('./test/tmp');
     })
-    .catch(err => Console.error(err));
+    .catch(err => error(err));
   });
 });

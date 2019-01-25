@@ -11,23 +11,8 @@ class Cli {
   /**
   * @description Show logo
   */
-  logo() {
-    figle('TEG - qa tool', (err, data) => {
-      if (err) {
-        error('Something went wrong...');
-        dir(err);
-        return;
-      }
-
-      log(data);
-    });
-  }
-
-  /**
-  * @description Show success message
-  */
-  success() {
-    figle('Success', (err, data) => {
+  showLogo(text) {
+    figle(text, (err, data) => {
       if (err) {
         error('Something went wrong...');
         dir(err);
