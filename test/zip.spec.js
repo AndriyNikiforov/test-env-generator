@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const chai = require('chai');
 const Unzip = require('adm-zip');
 const { resolve } = require('path');
-const zipApi = require('../src/zipapi/');
+const zipApi = require('../src/api/zip');
 
 describe('Test zip', () => {
   it('make zip', () => {

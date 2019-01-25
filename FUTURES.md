@@ -1,6 +1,6 @@
-# Version
+# Version 1.4
 
 LIST of FUTURES
-
-* SUPPORT
 * Add new functional
+* Optimization performance
+* SUPPORT
