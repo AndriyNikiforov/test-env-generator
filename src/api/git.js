@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const Git = require('nodegit');
+const download = require('download-git-repo');
 const { log, error } = require('console');
 const zipApi = require('./zip');
 
@@ -8,7 +8,6 @@ const zipApi = require('./zip');
  */
 class GitApi {
   constructor() {
-    this.clone = Git.Clone;
     this.makeArch = zipApi.makeArch;
   }
 
@@ -18,12 +17,12 @@ class GitApi {
    */
   cloneSkeleton(address) {
     fs.mkdir('./tmp');
-    this.clone(address, './tmp')
-      .then((repository) => {
-        log('Cloned ', repository.workdir());
-        this.makeArch('skeleton');
-      })
-      .catch(err => error(err));
+
+    download(address, './tmp', (err) => {
+      if (err) error(err);
+      log('Cloned');
+      this.makeArch('skeleton');
+    });
   }
 }
 

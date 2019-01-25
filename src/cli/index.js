@@ -33,7 +33,7 @@ commander
 commander
   .command('selenium:last')
   .description('git clone the last version of selenium skeleton')
-  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/selblui.git'));
+  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/selblui'));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -41,7 +41,7 @@ commander
 commander
   .command('appium:last')
   .description('git clone the last version of appium skeleton')
-  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/appiumwdblui.git'));
+  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/appiumwdblui'));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -49,7 +49,7 @@ commander
 commander
   .command('webdriverIO:last')
   .description('git clone the last version of webdrtiver.io skeleton')
-  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/selwdioblui.git'));
+  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/selwdioblui'));
 
 /**
  * @description Command for generate selenium skeleton
