@@ -1,39 +1,56 @@
+<a name="Zip"></a>
+
+## Zip
+**Kind**: global class
+
+- [Zip](#zip)
+  - [zip.exectArch(pathArch, pathToExt)](#zipexectarchpatharch-pathtoext)
+  - [zip.makeArch(name)](#zipmakearchname)
+- [GitApi](#gitapi)
+  - [gitApi.cloneSkeleton(address)](#gitapicloneskeletonaddress)
+- [Cli](#cli)
+  - [cli.showLogo()](#clishowlogo)
+  - [cli.help()](#clihelp)
+  - [cli.gitVersion()](#cligitversion)
+
+<a name="Zip+exectArch"></a>
+
+### zip.exectArch(pathArch, pathToExt)
+Execute zip archive
+
+**Kind**: instance method of [<code>Zip</code>](#Zip)
+
+| Param | Type |
+| --- | --- |
+| pathArch | <code>String</code> |
+| pathToExt | <code>String</code> |
+
+<a name="Zip+makeArch"></a>
+
+### zip.makeArch(name)
+Make zip archive
+
+**Kind**: instance method of [<code>Zip</code>](#Zip)
+
+| Param | Type |
+| --- | --- |
+| name | <code>String</code> |
+
+
 <a name="GitApi"></a>
 
 ## GitApi
 **Kind**: global class
+<a name="GitApi+cloneSkeleton"></a>
 
-- [GitApi](#gitapi)
-  - [gitApi.appiumUpdate()](#gitapiappiumupdate)
-  - [gitApi.seleniumUpdate()](#gitapiseleniumupdate)
-  - [gitApi.webdriverIO()](#gitapiwebdriverio)
-- [Cli](#cli)
-  - [cli.logo()](#clilogo)
-  - [cli.success()](#clisuccess)
-  - [cli.help()](#clihelp)
-  - [cli.gitVersion()](#cligitversion)
-- [Helper](#helper)
-  - [helper.exectArch(pathArch, pathToExt)](#helperexectarchpatharch-pathtoext)
-  - [helper.makeArch(name)](#helpermakearchname)
-
-<a name="GitApi+appiumUpdate"></a>
-
-### gitApi.appiumUpdate()
-Clone from git appium skeleton and making zip archive
+### gitApi.cloneSkeleton(address)
+Clone repository and make zip archive
 
 **Kind**: instance method of [<code>GitApi</code>](#GitApi)
-<a name="GitApi+seleniumUpdate"></a>
 
-### gitApi.seleniumUpdate()
-Clone from git selenium skeleton and making zip archive
-
-**Kind**: instance method of [<code>GitApi</code>](#GitApi)
-<a name="GitApi+webdriverIO"></a>
-
-### gitApi.webdriverIO()
-Clone from git webdriver.io skeleton and making zip archive
-
-**Kind**: instance method of [<code>GitApi</code>](#GitApi)
+| Param | Type |
+| --- | --- |
+| address | <code>String</code> |
 
 <a name="Cli"></a>
 
@@ -41,21 +58,14 @@ Clone from git webdriver.io skeleton and making zip archive
 **Kind**: global class
 
 * [Cli](#Cli)
-    * [.logo()](#Cli+logo)
-    * [.success()](#Cli+success)
+    * [.showLogo()](#Cli+showLogo)
     * [.help()](#Cli+help)
     * [.gitVersion()](#Cli+gitVersion)
 
-<a name="Cli+logo"></a>
+<a name="Cli+showLogo"></a>
 
-### cli.logo()
+### cli.showLogo()
 Show logo
-
-**Kind**: instance method of [<code>Cli</code>](#Cli)
-<a name="Cli+success"></a>
-
-### cli.success()
-Show success message
 
 **Kind**: instance method of [<code>Cli</code>](#Cli)
 <a name="Cli+help"></a>
@@ -70,36 +80,3 @@ Show help block
 Show information about commands for generate git version skeleton
 
 **Kind**: instance method of [<code>Cli</code>](#Cli)
-
-<a name="Helper"></a>
-
-## Helper
-**Kind**: global class
-
-* [Helper](#Helper)
-    * [.exectArch(pathArch, pathToExt)](#Helper+exectArch)
-    * [.makeArch(name)](#Helper+makeArch)
-
-<a name="Helper+exectArch"></a>
-
-### helper.exectArch(pathArch, pathToExt)
-Execute zip archive
-
-**Kind**: instance method of [<code>Helper</code>](#Helper)
-
-| Param | Type |
-| --- | --- |
-| pathArch | <code>String</code> |
-| pathToExt | <code>String</code> |
-
-<a name="Helper+makeArch"></a>
-
-### helper.makeArch(name)
-Make zip archive
-
-**Kind**: instance method of [<code>Helper</code>](#Helper)
-
-| Param | Type |
-| --- | --- |
-| name | <code>String</code> |
-

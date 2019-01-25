@@ -6,9 +6,9 @@ const { resolve } = require('path');
 const { error, log } = require('console');
 
 /**
- * @class Helper
+ * @class Zip
  */
-class Helper {
+class Zip {
   /**
    * @description Execute zip archive
    * @param {String} pathArch
@@ -34,4 +34,4 @@ class Helper {
   }
 }
 
-module.exports = new Helper();
+module.exports = new Zip();

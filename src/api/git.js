@@ -12,6 +12,10 @@ class GitApi {
     this.makeArch = zipApi.makeArch;
   }
 
+  /**
+   * @description Clone repository and make zip archive
+   * @param {String} address
+   */
   cloneSkeleton(address) {
     fs.mkdir('./tmp');
     this.clone(address, './tmp')
