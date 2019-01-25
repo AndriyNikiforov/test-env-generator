@@ -2,4 +2,7 @@
 
 const { cli } = require('./lib');
 
+/**
+ * Call cli builder
+ */
 cli();
