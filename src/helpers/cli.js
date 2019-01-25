@@ -2,7 +2,7 @@
 const figle = require('figlet');
 const chalk = require('chalk').default;
 const columify = require('columnify');
-const { log, error, dir } = require('console');
+const { log, error } = require('console');
 
 /**
  * @class Cli
@@ -11,11 +11,10 @@ class Cli {
   /**
   * @description Show logo
   */
-  showLogo(text) {
-    figle(text, (err, data) => {
+  showLogo() {
+    figle('TEG - qa tool', (err, data) => {
       if (err) {
-        error('Something went wrong...');
-        dir(err);
+        error('Something went wrong...', err);
         return;
       }
 

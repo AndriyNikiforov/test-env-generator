@@ -6,7 +6,7 @@ const gitApi = require('../api/git');
 /**
  * @description Show logo
  */
-cli.showLogo('TEG - qa tool');
+cli.showLogo();
 
 /**
  * @description Show version package
@@ -38,7 +38,7 @@ commander
 commander
   .command('selenium:last')
   .description('git clone the last version of selenium skeleton')
-  .action(() => gitApi.seleniumUpdate());
+  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/selblui.git'));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -46,7 +46,7 @@ commander
 commander
   .command('appium:last')
   .description('git clone the last version of appium skeleton')
-  .action(() => gitApi.appiumUpdate());
+  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/appiumwdblui.git'));
 
 /**
  * @description Command git clone a last version of skeleton
@@ -54,7 +54,7 @@ commander
 commander
   .command('webdriverIO:last')
   .description('git clone the last version of webdrtiver.io skeleton')
-  .action(() => gitApi.webdriverIO());
+  .action(() => gitApi.cloneSkeleton('https://github.com/AndriyNikiforov/selwdioblui.git'));
 
 /**
  * @description Command for generate selenium skeleton
@@ -64,7 +64,6 @@ commander
   .description('generate selenium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selblui.zip', path);
-    cli.showLogo('Success');
   });
 
 /**
@@ -75,7 +74,6 @@ commander
   .description('generate appium skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/appiumwdblui.zip', path);
-    cli.showLogo('Success');
   });
 
 /**
@@ -86,7 +84,6 @@ commander
   .description('generate webdriver.io skeleton')
   .action((path) => {
     zipApi.exectArch('../assets/selwdioblui.zip', path);
-    cli.showLogo('Success');
   });
 
 module.exports = commander;
