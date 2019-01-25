@@ -4,11 +4,6 @@ const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
 
 /**
- * @description Show logo
- */
-cli.showLogo();
-
-/**
  * @description Show version package
  */
 commander
@@ -62,9 +57,7 @@ commander
 commander
   .command('selenium <path>')
   .description('generate selenium skeleton')
-  .action((path) => {
-    zipApi.exectArch('../assets/selblui.zip', path);
-  });
+  .action(path => zipApi.exectArch('../assets/selblui.zip', path));
 
 /**
  * @description Command for generate appium skeleton
@@ -72,9 +65,7 @@ commander
 commander
   .command('appium <path>')
   .description('generate appium skeleton')
-  .action((path) => {
-    zipApi.exectArch('../assets/appiumwdblui.zip', path);
-  });
+  .action(path => zipApi.exectArch('../assets/appiumwdblui.zip', path));
 
 /**
  * @description Command for generate webdriver.io skeleton
@@ -82,8 +73,6 @@ commander
 commander
   .command('webdriver.io <path>')
   .description('generate webdriver.io skeleton')
-  .action((path) => {
-    zipApi.exectArch('../assets/selwdioblui.zip', path);
-  });
+  .action(path => zipApi.exectArch('../assets/selwdioblui.zip', path));
 
 module.exports = commander;

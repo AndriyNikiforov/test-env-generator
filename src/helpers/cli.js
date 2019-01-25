@@ -2,26 +2,12 @@
 const figle = require('figlet');
 const chalk = require('chalk').default;
 const columify = require('columnify');
-const { log, error } = require('console');
+const { log } = require('console');
 
 /**
  * @class Cli
  */
 class Cli {
-  /**
-  * @description Show logo
-  */
-  showLogo() {
-    figle('TEG - qa tool', (err, data) => {
-      if (err) {
-        error('Something went wrong...', err);
-        return;
-      }
-
-      log(data);
-    });
-  }
-
   /**
   * @description Show help block
   */
@@ -45,7 +31,10 @@ class Cli {
   }
 
   version() {
-    log(`version ${chalk.cyan('1.3')}`);
+    figle('TEG - qa tool', (err, data) => {
+      log(data);
+      log(`\t\t\t\t\t\t version ${chalk.cyan('1.3')}`);
+    });
   }
 
   /**
