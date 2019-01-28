@@ -1,62 +1,40 @@
 /* eslint-disable class-methods-use-this */
 const figle = require('figlet');
-const chalk = require('chalk').default;
-const columify = require('columnify');
-const { log } = require('console');
+const { log, group, groupEnd } = require('console');
 
 /**
  * @class Cli
  */
 class Cli {
-  /**
-  * @description Show help block
-  */
-  help() {
-    const columns = columify([
-      {
-        command: chalk.cyan('selenium <path>'),
-        about: chalk.cyan('generate selenium webdriver and standalone server'),
-      },
-      {
-        command: chalk.green('appium <path>'),
-        about: chalk.green('generate  appium skeleton'),
-      },
-      {
-        command: chalk.blue('webdriver.io <path>'),
-        about: chalk.blue('generate webdriver.io skeleton with pom and standalone server'),
-      },
-    ]);
-
-    log(columns);
+  constructor() {
+    this.version = '1.4';
   }
 
+  /**
+   * @description Show version
+   */
   version() {
     figle('TEG - qa tool', (err, data) => {
       log(data);
-      log(`\t\t\t\t\t\t version ${chalk.cyan('1.3')}`);
+      log(`\t\t\t\t\t\t version ${log('\x1b[36m%s\x1b[0m'.this.version)}`);
     });
   }
 
-  /**
-  * @description Show information about commands for generate git version skeleton
-  */
-  gitVersion() {
-    const columns = columify([
-      {
-        command: chalk.cyan('selenium:last'),
-        about: chalk.cyan('generate zip file with git version skeleton'),
-      },
-      {
-        command: chalk.green('appium:last'),
-        about: chalk.green('generate zip file with git version skeleton'),
-      },
-      {
-        command: chalk.blue('webdriverIO:last'),
-        about: chalk.blue('generate zip file with git version skeleton'),
-      },
-    ]);
+  info() {
+    group('SELENIUM');
+    log('\x1b[36m%s\x1b[0m', 'selenium <path> \t\t generate selenium webdriver and standalone server');
+    log('\x1b[36m%s\x1b[0m', 'selenium:last \t\t generate zip file with git version skeleton \n');
+    groupEnd();
 
-    log(columns);
+    group('APPIUM');
+    log('\x1b[33m%s\x1b[0m', 'appium <path> \t\t generate  appium skeleton');
+    log('\x1b[33m%s\x1b[0m', 'appium:last \t\t\t generate zip file with git version skeleton \n');
+    groupEnd();
+
+    group('WEBDRIVE.IO');
+    log('\x1b[32m%s\x1b[0m', 'webdriverIO <path> \t\t generate webdriver.io skeleton with pom and standalone server');
+    log('\x1b[32m%s\x1b[0m', 'webdriverIO:last \t\t generate zip file with git version skeleton');
+    groupEnd();
   }
 }
 

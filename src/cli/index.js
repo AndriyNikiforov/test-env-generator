@@ -17,15 +17,8 @@ commander
 commander
   .command('info')
   .description('information about options')
-  .action(() => cli.help());
+  .action(() => cli.info());
 
-/**
- * @description Show information about commands for generate git version skeleton
- */
-commander
-  .command('git:version')
-  .description('information about commands for generate git version skeleton')
-  .action(() => cli.gitVersion());
 
 /**
  * @description Command git clone a last version of skeleton
