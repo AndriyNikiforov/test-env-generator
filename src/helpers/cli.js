@@ -6,17 +6,13 @@ const { log, group, groupEnd } = require('console');
  * @class Cli
  */
 class Cli {
-  constructor() {
-    this.version = '1.4';
-  }
-
   /**
    * @description Show version
    */
-  version() {
+  versionInfo() {
     figle('TEG - qa tool', (err, data) => {
       log(data);
-      log(`\t\t\t\t\t\t version ${log('\x1b[36m%s\x1b[0m'.this.version)}`);
+      log('\t\t\t\t\t\t version 1.4');
     });
   }
 

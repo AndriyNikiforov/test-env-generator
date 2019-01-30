@@ -14,7 +14,6 @@ class Zip {
    * @param {String} pathToExt
    */
   async exectArch(pathToArch, pathToExt) {
-    log(resolve(__dirname, pathToArch));
     const zip = new Unzip(resolve(__dirname, pathToArch));
     await zip.extractAllTo(pathToExt, true);
   }

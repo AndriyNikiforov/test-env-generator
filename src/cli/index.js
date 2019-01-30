@@ -9,7 +9,7 @@ const gitApi = require('../api/git');
 commander
   .command('v')
   .description('beautifully version showed')
-  .action(() => cli.version());
+  .action(() => cli.versionInfo());
 
 /**
  * @description  Show all tool commands
