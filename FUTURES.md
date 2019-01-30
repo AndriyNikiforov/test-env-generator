@@ -1,6 +1,7 @@
-# Version 1.4
+# Version 1.5
 
 LIST of FUTURES
-* Add new functional
+* Add generator test case
 * Optimization performance
+* Add new api methods
 * SUPPORT

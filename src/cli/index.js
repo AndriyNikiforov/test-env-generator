@@ -19,7 +19,6 @@ commander
   .description('information about options')
   .action(() => cli.info());
 
-
 /**
  * @description Command git clone a last version of skeleton
  */

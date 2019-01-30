@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const download = require('download-git-repo');
-const { log, error } = require('console');
+const { log } = require('console');
 const zipApi = require('./zip');
 
 /**
@@ -8,7 +8,12 @@ const zipApi = require('./zip');
  */
 class GitApi {
   constructor() {
+    this.colors = {
+      cyan: '\x1b[36m%s\x1b[0m',
+      magenta: '\x1b[35m',
+    };
     this.makeArch = zipApi.makeArch;
+    this.userArch = zipApi.makeUserArch;
   }
 
   /**
@@ -19,8 +24,8 @@ class GitApi {
     fs.mkdir('./tmp');
 
     download(address, './tmp', (err) => {
-      if (err) error(err);
-      log('Cloned');
+      if (err) log(this.colors.magenta, err);
+      log(this.colors.cyan, 'Cloned');
       this.makeArch('skeleton');
     });
   }
