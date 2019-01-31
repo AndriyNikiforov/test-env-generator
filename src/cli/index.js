@@ -2,6 +2,7 @@ const commander = require('commander');
 const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
+const documentGen = require('../api/document');
 
 /**
  * @description Show version package
@@ -18,6 +19,19 @@ commander
   .command('info')
   .description('information about options')
   .action(() => cli.info());
+
+/**
+* @description Command generate test case template (.doc)
+*/
+commander
+  .command('test-case:doc')
+  .description('generate test case template (.doc)')
+  .action(() => documentGen.emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc'));
+
+commander
+  .command('test-case:odt')
+  .description('generate test case template (.odt)')
+  .action(() => documentGen.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt'));
 
 /**
  * @description Command git clone a last version of skeleton
