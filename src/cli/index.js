@@ -3,6 +3,7 @@ const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
 const documentGen = require('../api/document');
+const documentCli = require('./documentCli');
 
 /**
  * @description Show version package
@@ -19,6 +20,14 @@ commander
   .command('info')
   .description('information about options')
   .action(() => cli.info());
+
+/**
+* @description Command generate test case with your data
+*/
+commander
+  .command('utest-case:doc')
+  .description('generate test case with your data')
+  .action(() => documentCli());
 
 /**
 * @description Command generate test case template (.doc)

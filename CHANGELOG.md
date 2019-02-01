@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V1.5
+* Refactoring
+* Update api
+* Add generator test case doc
+
 ## V1.3
 * Refactoring
 * Update api
