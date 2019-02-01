@@ -11,7 +11,7 @@ module.exports = {
           themeFill: 'text1',
           themeFillTint: '80',
         },
-        fontFamily: 'Times New Roman',
+        font_face: 'Times New Roman',
       },
     }, {
       val: '',
@@ -52,5 +52,6 @@ module.exports = {
     font_size: 28,
     bold: true,
     align: 'left',
+    font_face: 'Time New Roman',
   },
 };

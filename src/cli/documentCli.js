@@ -2,9 +2,12 @@ const inquirer = require('inquirer');
 const { log } = require('console');
 const documentApi = require('../api/document');
 
-log('Welcome to test case generator');
-
 const questions = [
+  {
+    type: 'input',
+    name: 'fileName',
+    message: 'File name:',
+  },
   {
     type: 'input',
     name: 'projectName',
@@ -61,6 +64,7 @@ const questions = [
 ];
 
 const poll = () => {
+  log('Welcome to test case generator');
   inquirer.prompt(questions)
     .then(answer => documentApi.buildTemplate(answer));
 };

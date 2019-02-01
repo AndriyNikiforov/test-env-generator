@@ -1,38 +1,39 @@
-/* eslint-disable class-methods-use-this */
 const fs = require('fs-extra');
-const path = require('path');
 const officegen = require('officegen');
-const { resolve } = require('path');
+const { resolve, join } = require('path');
 const { error, log } = require('console');
 const {
   table,
   tableStyle,
   config,
   projectTextConfig,
-} = require('../config/');
+} = require('../config/document');
 
 class Document {
-  buildTemplate(data) {
-    const out = fs.createWriteStream(path.join('./', 'test_case.docx'));
-    const docx = officegen(config);
-    const tableContent = table(data);
-
-    let pObject = docx.createP();
-
-    pObject.addText(data.projectName, projectTextConfig);
-    pObject = docx.createTable(tableContent, tableStyle);
-
-    out.on('error', err => error(err));
-    out.on('close', () => log('\x1b[32m%s\x1b[0m', 'SUCCESS'));
-
-    docx.on('error', err => error(err));
-    docx.generate(out);
+  constructor() {
+    this.docx = officegen(config);
+    this.messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
   }
 
-  emptyTemplateDoc(pathToClone, format) {
-    fs.copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
+  async buildTemplate(data) {
+    const tableContent = table(data);
+    const out = fs.createWriteStream(join('./', `${data.fileName}_test_case.docx`));
+    let pObject = this.docx.createP();
+
+    pObject.addText(data.projectName, projectTextConfig);
+    pObject = this.docx.createTable(tableContent, tableStyle);
+
+    out.on('error', err => error(err));
+    out.on('close', () => log(...this.messageSuccess));
+
+    this.docx.on('error', err => error(err));
+    await this.docx.generate(out);
+  }
+
+  async emptyTemplateDoc(pathToClone, format) {
+    await fs.copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
       if (err) error(err);
-      log('\x1b[36m%s\x1b[0m', 'SUCCESS');
+      log(...this.messageSuccess);
     });
   }
 }
