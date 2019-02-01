@@ -31,6 +31,12 @@ class Cli {
     log('\x1b[32m%s\x1b[0m', 'webdriverIO <path> \t\t generate webdriver.io skeleton with pom and standalone server');
     log('\x1b[32m%s\x1b[0m', 'webdriverIO:last \t\t generate zip file with git version skeleton');
     groupEnd();
+
+    group('TEST CASE DOCUMENTATION');
+    log('\x1b[33m%s\x1b[0m', 'test-case:doc \t\t  generate test case template (.doc)');
+    log('\x1b[33m%s\x1b[0m', 'test-case:odt \t\t  generate test case template (.odt)');
+    log('\x1b[33m%s\x1b[0m', 'utest-case:doc \t\t  generate test case with your data');
+    groupEnd();
   }
 }
 

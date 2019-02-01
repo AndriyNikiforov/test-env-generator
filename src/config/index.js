@@ -16,7 +16,7 @@ module.exports = {
     }, {
       val: '',
       opts: {
-        cellColWidth: 3200,
+        cellColWidth: 5000,
         shd: {
           fill: '92CDDC',
           themeFill: 'text1',
@@ -37,5 +37,20 @@ module.exports = {
     tableColor: 'ada',
     tableAlign: 'left',
     tableFontFamily: 'Times New Roman',
+  },
+  config: {
+    type: 'docx',
+    orientation: 'portrait',
+    pageMargins: {
+      top: 1000,
+      left: 1000,
+      right: 1000,
+      bottom: 1000,
+    },
+  },
+  projectTextConfig: {
+    font_size: 28,
+    bold: true,
+    align: 'left',
   },
 };
