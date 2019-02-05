@@ -7,7 +7,7 @@ const {
   tableStyle,
   config,
   projectTextConfig,
-} = require('../config/document');
+} = require('../config/testSteps');
 
 class Document {
   constructor() {
@@ -17,7 +17,7 @@ class Document {
 
   async buildTemplate(data) {
     const tableContent = table(data);
-    const out = fs.createWriteStream(join('./', `${data.fileName}_test_case.docx`));
+    const out = fs.createWriteStream(join('./', `${data.title}_test_steps.docx`));
     let pObject = this.docx.createP();
 
     pObject.addText(data.projectName, projectTextConfig);
@@ -31,7 +31,7 @@ class Document {
   }
 
   async emptyTemplateDoc(pathToClone, format) {
-    await fs.copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
+    await fs.copyFile(resolve(__dirname, pathToClone), `./test-steps-template.${format}`, (err) => {
       if (err) error(err);
       log(...this.messageSuccess);
     });

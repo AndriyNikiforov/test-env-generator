@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const { log } = require('console');
-const documentApi = require('../api/document');
+const documentApi = require('../api/testCase');
 
 const questions = [
   {

@@ -2,8 +2,9 @@ const commander = require('commander');
 const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
-const documentGen = require('../api/document');
-const documentCli = require('./documentCli');
+const testCaseGen = require('../api/testCase');
+const testCaseCli = require('./testCaseCli');
+const testStepsCli = require('./testStepsCli');
 
 /**
  * @description Show version package
@@ -21,13 +22,18 @@ commander
   .description('information about options')
   .action(() => cli.info());
 
+commander
+  .command('test-steps:doc')
+  .description('generate test steps with your data')
+  .action(() => testStepsCli());
+
 /**
 * @description Command generate test case with your data
 */
 commander
   .command('utest-case:doc')
   .description('generate test case with your data')
-  .action(() => documentCli());
+  .action(() => testCaseCli());
 
 /**
 * @description Command generate test case template (.doc)
@@ -35,12 +41,12 @@ commander
 commander
   .command('test-case:doc')
   .description('generate test case template (.doc)')
-  .action(() => documentGen.emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc'));
+  .action(() => testCaseGen.emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc'));
 
 commander
   .command('test-case:odt')
   .description('generate test case template (.odt)')
-  .action(() => documentGen.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt'));
+  .action(() => testCaseGen.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt'));
 
 /**
  * @description Command git clone a last version of skeleton
