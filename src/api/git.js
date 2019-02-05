@@ -20,10 +20,10 @@ class GitApi {
    * @description Clone repository and make zip archive
    * @param {String} address
    */
-  cloneSkeleton(address) {
+  async cloneSkeleton(address) {
     fs.mkdir('./tmp');
 
-    download(address, './tmp', (err) => {
+    await download(address, './tmp', (err) => {
       if (err) log(this.colors.magenta, err);
       log(this.colors.cyan, 'Cloned');
       this.makeArch('skeleton');

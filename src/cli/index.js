@@ -22,6 +22,9 @@ commander
   .description('information about options')
   .action(() => cli.info());
 
+/**
+ * @description Command generate test steps with your data
+ */
 commander
   .command('test-steps:doc')
   .description('generate test steps with your data')
