@@ -1,16 +1,11 @@
 /* eslint-disable class-methods-use-this */
 const figle = require('figlet');
 const { log, group, groupEnd } = require('console');
-const config = require('../config/info');
 
 /**
  * @class Cli
  */
 class Cli {
-  constructor() {
-    this.data = config.info;
-  }
-
   /**
    * @description Show version
    */

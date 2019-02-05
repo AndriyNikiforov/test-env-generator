@@ -21,7 +21,7 @@ class GitApi {
    * @param {String} address
    */
   async cloneSkeleton(address) {
-    fs.mkdir('./tmp');
+    await fs.mkdir('./tmp');
 
     await download(address, './tmp', (err) => {
       if (err) log(this.colors.magenta, err);
