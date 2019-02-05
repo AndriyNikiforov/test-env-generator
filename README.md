@@ -38,4 +38,10 @@ Options
 ## Bugs
 If you found bug or problem, please make issues in git repository. And if you can please make review my code.
 
+## Code of conduct
+[CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)
+
+## Pull request template
+[PULL_REQUEST](PULL_REQUEST_TEMPLATE.md)
+
 # Thanks for using !!
