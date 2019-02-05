@@ -26,6 +26,16 @@ module.exports = [
   },
   {
     type: 'input',
+    name: 'testExpecRes',
+    message: 'Expected results:',
+  },
+  {
+    type: 'input',
+    name: 'testDescription',
+    message: 'Test description',
+  },
+  {
+    type: 'input',
     name: 'testExecDate',
     message: 'Test exectuion date',
     validate: (value) => {
@@ -51,10 +61,5 @@ module.exports = [
 
       return 'Pleas enter a valid date (DD/MM/YYYY or DD-MM-YYYY)';
     },
-  },
-  {
-    type: 'input',
-    name: 'testDescription',
-    message: 'Test description',
   },
 ];
