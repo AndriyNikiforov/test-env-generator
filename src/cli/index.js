@@ -1,8 +1,8 @@
 const commander = require('commander');
 const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
-const gitApi = require('../api/git');
-const testCaseGen = require('../api/document');
+const gitCli = require('./git');
+const templateCli = require('./template');
 const { pollCase, pollSteps } = require('./document');
 
 /**
@@ -37,42 +37,15 @@ commander
   .description('generate test case with your data')
   .action(() => pollCase());
 
-/**
-* @description Command generate test case template (.doc)
-*/
 commander
-  .command('test-case:doc')
-  .description('generate test case template (.doc)')
-  .action(() => testCaseGen.emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc'));
+  .command('test-case:cli')
+  .description('call test-case template cli for generate doc files')
+  .action(() => templateCli());
 
 commander
-  .command('test-case:odt')
-  .description('generate test case template (.odt)')
-  .action(() => testCaseGen.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt'));
-
-/**
- * @description Command git clone a last version of skeleton
- */
-commander
-  .command('selenium:last')
-  .description('git clone the last version of selenium skeleton')
-  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/selblui'));
-
-/**
- * @description Command git clone a last version of skeleton
- */
-commander
-  .command('appium:last')
-  .description('git clone the last version of appium skeleton')
-  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/appiumwdblui'));
-
-/**
- * @description Command git clone a last version of skeleton
- */
-commander
-  .command('webdriverIO:last')
-  .description('git clone the last version of webdrtiver.io skeleton')
-  .action(() => gitApi.cloneSkeleton('AndriyNikiforov/selwdioblui'));
+  .command('git:cli')
+  .description('call git cli for generate skeleton')
+  .action(() => gitCli());
 
 /**
  * @description Command for generate selenium skeleton
