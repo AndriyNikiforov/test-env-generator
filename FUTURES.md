@@ -1,4 +1,4 @@
-# Version 1.6
+# Version 1.6 - 1.7
 
 LIST of FUTURES
 * Merge into one file test case and test steps

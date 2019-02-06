@@ -12,6 +12,7 @@ class GitApi {
       cyan: '\x1b[36m%s\x1b[0m',
       magenta: '\x1b[35m',
     };
+
     this.makeArch = zipApi.makeArch;
     this.userArch = zipApi.makeUserArch;
   }

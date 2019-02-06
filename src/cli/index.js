@@ -2,7 +2,7 @@ const commander = require('commander');
 const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
-const testCaseGen = require('../api/testCase');
+const testCaseGen = require('../api/document');
 const testCaseCli = require('./testCaseCli');
 const testStepsCli = require('./testStepsCli');
 
