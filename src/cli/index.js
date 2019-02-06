@@ -3,8 +3,7 @@ const cli = require('../helpers/cli');
 const zipApi = require('../api/zip');
 const gitApi = require('../api/git');
 const testCaseGen = require('../api/document');
-const testCaseCli = require('./testCaseCli');
-const testStepsCli = require('./testStepsCli');
+const { pollCase, pollSteps } = require('./document');
 
 /**
  * @description Show version package
@@ -28,7 +27,7 @@ commander
 commander
   .command('test-steps:doc')
   .description('generate test steps with your data')
-  .action(() => testStepsCli());
+  .action(() => pollSteps());
 
 /**
 * @description Command generate test case with your data
@@ -36,7 +35,7 @@ commander
 commander
   .command('utest-case:doc')
   .description('generate test case with your data')
-  .action(() => testCaseCli());
+  .action(() => pollCase());
 
 /**
 * @description Command generate test case template (.doc)
