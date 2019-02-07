@@ -10,7 +10,7 @@ const question = [
   },
 ];
 
-const poll = () => {
+module.exports = () => {
   inquirer.prompt(question)
     .then((answer) => {
       switch (answer.type) {
@@ -25,5 +25,3 @@ const poll = () => {
       }
     });
 };
-
-module.exports = poll;

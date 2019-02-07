@@ -38,20 +38,20 @@ commander
   .action(() => pollCase());
 
 /**
- * @description Command call test case cli interface
- */
-commander
-  .command('test-case:cli')
-  .description('call test-case template cli for generate doc files')
-  .action(() => templateCli());
-
-/**
  * @description Command call git cli interface
  */
 commander
   .command('git:cli')
   .description('call git cli for generate skeleton')
   .action(() => gitCli());
+
+/**
+ * @description Command call test case cli interface
+ */
+commander
+  .command('test-case:cli')
+  .description('call test-case template cli for generate doc files')
+  .action(() => templateCli());
 
 /**
  * @description Command for generate selenium skeleton

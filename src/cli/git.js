@@ -10,7 +10,7 @@ const question = [
   },
 ];
 
-const poll = () => {
+module.exports = () => {
   inquirer.prompt(question)
     .then((answer) => {
       switch (answer.gitRepo) {
@@ -28,5 +28,3 @@ const poll = () => {
       }
     });
 };
-
-module.exports = poll;
