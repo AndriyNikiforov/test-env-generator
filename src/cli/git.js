@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const gitApi = require('../api/git');
+const { cloneSkeleton } = require('../api/git');
 
 const question = [
   {
@@ -15,13 +15,13 @@ module.exports = () => {
     .then((answer) => {
       switch (answer.gitRepo) {
         case 'selenium':
-          gitApi.cloneSkeleton('AndriyNikiforov/selblui');
+          cloneSkeleton('AndriyNikiforov/selblui');
           break;
         case 'appium':
-          gitApi.cloneSkeleton('AndriyNikiforov/appiumwdblui');
+          cloneSkeleton('AndriyNikiforov/appiumwdblui');
           break;
         case 'wdio':
-          gitApi.cloneSkeleton('AndriyNikiforov/selwdioblui');
+          cloneSkeleton('AndriyNikiforov/selwdioblui');
           break;
         default:
           break;
