@@ -24,8 +24,10 @@ class Zip {
    */
   async makeArch(name) {
     const zip = new Unzip();
+
     await zip.addLocalFolder('./tmp', './');
     await zip.writeZip(`${name}.zip`);
+
     await fs.remove('./tmp', (bug) => {
       if (bug) error(bug);
       log('EXCELLENT');
