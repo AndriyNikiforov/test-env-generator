@@ -1,16 +1,12 @@
-const fs = require('fs-extra');
-const download = require('download-git-repo');
+const gitClone = require('gitclone');
 const { log } = require('console');
 const { makeArch } = require('./zip');
 
-const cloneSkeleton = async (address) => {
-  await fs.mkdir('./tmp');
-
-  await download(address, './tmp', (err) => {
-    if (err) log('\x1b[35m', err);
-    log('\x1b[36m%s\x1b[0m', 'Cloned');
-    makeArch('skeleton');
-  });
+module.exports = {
+  cloneSkeleton: async (folderName) => {
+    await gitClone(`AndriyNikiforov/${folderName}`, (err) => {
+      if (err) log(err);
+      makeArch('skeleton', folderName);
+    });
+  },
 };
-
-module.exports = cloneSkeleton;

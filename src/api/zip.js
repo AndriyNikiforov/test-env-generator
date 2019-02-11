@@ -22,13 +22,13 @@ class Zip {
    * @description Make zip archive
    * @param {String} name
    */
-  async makeArch(name) {
+  async makeArch(name, folderName) {
     const zip = new Unzip();
 
-    await zip.addLocalFolder('./tmp', './');
+    await zip.addLocalFolder(folderName, './');
     await zip.writeZip(`${name}.zip`);
 
-    await fs.remove('./tmp', (bug) => {
+    await fs.remove(folderName, (bug) => {
       if (bug) error(bug);
       log('EXCELLENT');
     });

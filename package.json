@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
@@ -75,6 +75,7 @@
     "download-git-repo": "^1.1.0",
     "figlet": "^1.2.1",
     "fs-extra": "^7.0.1",
+    "gitclone": "^2.0.0",
     "inquirer": "^6.2.2",
     "officegen": "^0.4.7"
   }

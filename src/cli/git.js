@@ -15,13 +15,13 @@ module.exports = () => {
     .then((answer) => {
       switch (answer.gitRepo) {
         case 'selenium':
-          cloneSkeleton('AndriyNikiforov/selblui');
+          cloneSkeleton('selblui');
           break;
         case 'appium':
-          cloneSkeleton('AndriyNikiforov/appiumwdblui');
+          cloneSkeleton('appiumwdblui');
           break;
         case 'wdio':
-          cloneSkeleton('AndriyNikiforov/selwdioblui');
+          cloneSkeleton('selwdioblui');
           break;
         default:
           break;
