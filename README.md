@@ -1,5 +1,7 @@
 # Test env generator
 
+[![Package Quality](https://npm.packagequality.com/badge/test-env-generator.png)](https://packagequality.com/#?package=test-env-generator)
+
 TEG is a tool for generate skeleton for fast start write tests.
 
 ## Installation
