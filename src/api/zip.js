@@ -12,7 +12,7 @@ class Zip {
    * @description Execute zip archive
    * @param {String} pathToArch
    */
-  async exectArch(pathToArch) {
+  async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
     await fs.mkdir('./qa-skeleton');
     await zip.extractAllTo('./qa-skeleton', true);

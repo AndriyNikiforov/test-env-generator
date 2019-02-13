@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     type: 'input',
-    name: 'testExpecRes',
+    name: 'testExpectRes',
     message: 'Expected results:',
   },
   {
@@ -37,10 +37,10 @@ module.exports = [
   {
     type: 'input',
     name: 'testExecDate',
-    message: 'Test exectuion date',
+    message: 'Test execution date',
     validate: (value) => {
       const date = value.match(
-        /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/
+        /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
       );
 
       if (date) { return true; }
@@ -54,7 +54,7 @@ module.exports = [
     message: 'Test designed date',
     validate: (value) => {
       const date = value.match(
-        /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/
+        /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
       );
 
       if (date) { return true; }

@@ -1,6 +1,6 @@
 const officegen = require('officegen');
-const { resolve, join } = require('path');
 const { error, log } = require('console');
+const { resolve, join } = require('path');
 const { createWriteStream, copyFile } = require('fs-extra');
 
 const {

@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const { exectArch } = require('../api/zip');
+const { exactArch } = require('../api/zip');
 
 const questions = [
   {
@@ -15,13 +15,13 @@ module.exports = () => {
     .then((param) => {
       switch (param.type) {
         case 'selenium':
-          exectArch('../assets/selblui.zip');
+          exactArch('../assets/selblui.zip');
           break;
         case 'appium':
-          exectArch('../assets/appiumwdblui.zip');
+          exactArch('../assets/appiumwdblui.zip');
           break;
         case 'wdio':
-          exectArch('../assets/selwdioblui.zip');
+          exactArch('../assets/selwdioblui.zip');
           break;
         default:
           break;

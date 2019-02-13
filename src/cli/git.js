@@ -4,7 +4,7 @@ const { cloneSkeleton } = require('../api/git');
 const question = [
   {
     type: 'list',
-    name: 'gitRepo',
+    name: 'gitRepository',
     message: 'Select the test skeleton:',
     choices: ['selenium', 'appium', 'wdio'],
   },
@@ -13,7 +13,7 @@ const question = [
 module.exports = () => {
   inquirer.prompt(question)
     .then((answer) => {
-      switch (answer.gitRepo) {
+      switch (answer.gitRepository) {
         case 'selenium':
           cloneSkeleton('https://github.com/AndriyNikiforov/selblui.git', 'selblui');
           break;

@@ -28,7 +28,7 @@ module.exports = {
     ['Test designed by', answer.testDesignedBy],
     ['Test priority', answer.testPriority],
     ['Test description', answer.testDescription],
-    ['Expected results', answer.testExpecRes],
+    ['Expected results', answer.testExpectRes],
     ['Test execution date', answer.testExecDate],
     ['Test designed date', answer.testDesignedDate],
   ],
