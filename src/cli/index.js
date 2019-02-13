@@ -3,7 +3,6 @@ const commander = require('commander');
 const { log } = require('console');
 
 const gitCli = require('./git');
-const templateCli = require('./template');
 const generatorCli = require('./generator');
 const documentCli = require('./document');
 
@@ -53,14 +52,6 @@ commander
   .command('git:cli')
   .description('call git cli for generate skeleton from git repository')
   .action(() => gitCli());
-
-/**
- * @description Command call test case cli interface
- */
-commander
-  .command('test-case:cli')
-  .description('call test-case template cli for generate doc files')
-  .action(() => templateCli());
 
 /**
  * @description Command call cli for generate skeleton
