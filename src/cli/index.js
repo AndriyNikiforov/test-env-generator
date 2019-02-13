@@ -1,5 +1,4 @@
 const commander = require('commander');
-const figle = require('figlet');
 const { log } = require('console');
 
 const gitCli = require('./git');
@@ -7,16 +6,40 @@ const templateCli = require('./template');
 const generator = require('./generator');
 const { pollCase, pollSteps } = require('./document');
 
+const showText = () => {
+  const text = () => {
+    /*
+ _____ _____ _____                          _              _
+|_   _|  ___|  __ \                        | |            | |
+  | | | |__ | |  \/  ______    __ _  __ _  | |_ ___   ___ | |
+  | | |  __|| | __  |______|  / _` |/ _` | | __/ _ \ / _ \| |
+  | | | |___| |_\ \          | (_| | (_| | | || (_) | (_) | |
+  \_/ \____/ \____/           \__, |\__,_|  \__\___/ \___/|_|
+                                 | |
+                                 |_|
+                                                 __     ____
+                                                /  |   / ___|
+                                        __   __ `| |  / /___
+                                        \ \ / /  | |  | ___ \
+                                         \ V /  _| |__| \_/ |
+                                          \_/   \___(_)_____/
+    */
+  };
+
+  log(text.toString()
+    // eslint-disable-next-line no-useless-escape
+    .replace(/^[^\/]+\/\*!?/, '')
+    // eslint-disable-next-line no-useless-escape
+    .replace(/\*\/[^\/]+$/, ''));
+};
+
 /**
  * @description Show version package
  */
 commander
   .command('v')
   .description('beautifully version showed')
-  .action(() => figle('TEG - qa tool', (err, data) => {
-    log(data);
-    log('\x1b[36m%s\x1b[0m', '\t\t\t\t\t\t version 1.4');
-  }));
+  .action(() => showText());
 
 /**
  * @description Command generate test steps with your data
