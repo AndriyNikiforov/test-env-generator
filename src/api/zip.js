@@ -11,11 +11,11 @@ class Zip {
   /**
    * @description Execute zip archive
    * @param {String} pathToArch
-   * @param {String} pathToExt
    */
-  async exectArch(pathToArch, pathToExt) {
+  async exectArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
-    await zip.extractAllTo(pathToExt, true);
+    await fs.mkdir('./qa-skeleton');
+    await zip.extractAllTo('./qa-skeleton', true);
   }
 
   /**

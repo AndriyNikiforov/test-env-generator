@@ -2,9 +2,9 @@ const commander = require('commander');
 const figle = require('figlet');
 const { log } = require('console');
 
-const zipApi = require('../api/zip');
 const gitCli = require('./git');
 const templateCli = require('./template');
+const generator = require('./generator');
 const { pollCase, pollSteps } = require('./document');
 
 /**
@@ -51,27 +51,11 @@ commander
   .action(() => templateCli());
 
 /**
- * @description Command for generate selenium skeleton
+ * @description Command call cli for generate skeleton
  */
 commander
-  .command('selenium <path>')
-  .description('generate selenium skeleton')
-  .action(path => zipApi.exectArch('../assets/selblui.zip', path));
-
-/**
- * @description Command for generate appium skeleton
- */
-commander
-  .command('appium <path>')
-  .description('generate appium skeleton')
-  .action(path => zipApi.exectArch('../assets/appiumwdblui.zip', path));
-
-/**
- * @description Command for generate webdriver.io skeleton
- */
-commander
-  .command('webdriver.io <path>')
-  .description('generate webdriver.io skeleton')
-  .action(path => zipApi.exectArch('../assets/selwdioblui.zip', path));
+  .command('test:gen')
+  .description('call cli for generate skeleton')
+  .action(() => generator());
 
 module.exports = commander;

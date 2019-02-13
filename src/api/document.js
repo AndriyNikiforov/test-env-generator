@@ -1,7 +1,8 @@
-const fs = require('fs-extra');
 const officegen = require('officegen');
 const { resolve, join } = require('path');
 const { error, log } = require('console');
+const { createWriteStream, copyFile } = require('fs-extra');
+
 const {
   table,
   tableStyle,
@@ -12,16 +13,16 @@ const {
 class Document {
   constructor() {
     this.docx = officegen(config);
+    this.pObject = this.docx.createP();
     this.messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
   }
 
   async buildTemplate(data, type) {
     const tableContent = table(data);
-    const out = fs.createWriteStream(join('./', `${data.fileName}_${type}.docx`));
-    let pObject = this.docx.createP();
+    const out = createWriteStream(join('./', `${data.fileName}_${type}.docx`));
 
-    pObject.addText(data.projectName, projectTextConfig);
-    pObject = this.docx.createTable(tableContent, tableStyle);
+    this.pObject.addText(data.projectName, projectTextConfig);
+    this.pObject = this.docx.createTable(tableContent, tableStyle);
 
     out.on('error', err => error(err));
     out.on('close', () => log(...this.messageSuccess));
@@ -31,7 +32,7 @@ class Document {
   }
 
   async emptyTemplateDoc(pathToClone, format) {
-    await fs.copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
+    await copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
       if (err) error(err);
       log(...this.messageSuccess);
     });

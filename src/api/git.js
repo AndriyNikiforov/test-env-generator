@@ -1,11 +1,11 @@
 const gitClone = require('gitclone');
-const { log } = require('console');
+const { error } = require('console');
 const { makeArch } = require('./zip');
 
 module.exports = {
   cloneSkeleton: async (folderName) => {
     await gitClone(`AndriyNikiforov/${folderName}`, (err) => {
-      if (err) log(err);
+      if (err) error(err);
       makeArch('skeleton', folderName);
     });
   },

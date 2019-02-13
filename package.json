@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
@@ -71,8 +71,6 @@
   "dependencies": {
     "adm-zip": "^0.4.13",
     "commander": "^2.19.0",
-    "docx-merger": "^1.2.2",
-    "download-git-repo": "^1.1.0",
     "figlet": "^1.2.1",
     "fs-extra": "^7.0.1",
     "gitclone": "^2.0.0",
