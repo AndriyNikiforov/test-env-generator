@@ -1,13 +1,14 @@
+/* eslint-disable no-useless-escape */
 const commander = require('commander');
 const { log } = require('console');
 
 const gitCli = require('./git');
 const templateCli = require('./template');
-const generator = require('./generator');
-const { pollCase, pollSteps } = require('./document');
+const generatorCli = require('./generator');
+const documentCli = require('./document');
 
 const showText = () => {
-  const text = () => {
+  log((() => {
     /*
  _____ _____ _____                          _              _
 |_   _|  ___|  __ \                        | |            | |
@@ -24,12 +25,8 @@ const showText = () => {
                                          \ V /  _| |__| \_/ |
                                           \_/   \___(_)_____/
     */
-  };
-
-  log(text.toString()
-    // eslint-disable-next-line no-useless-escape
+  }).toString()
     .replace(/^[^\/]+\/\*!?/, '')
-    // eslint-disable-next-line no-useless-escape
     .replace(/\*\/[^\/]+$/, ''));
 };
 
@@ -42,20 +39,12 @@ commander
   .action(() => showText());
 
 /**
- * @description Command generate test steps with your data
- */
-commander
-  .command('test-steps:doc')
-  .description('generate test steps with your data')
-  .action(() => pollSteps());
-
-/**
-* @description Command generate test case with your data
+ * @description Command call generate documents cli
 */
 commander
-  .command('utest-case:doc')
-  .description('generate test case with your data')
-  .action(() => pollCase());
+  .command('doc:gen')
+  .description('Command generate documents')
+  .action(() => documentCli());
 
 /**
  * @description Command call git cli interface
@@ -79,6 +68,6 @@ commander
 commander
   .command('test:gen')
   .description('call cli for generate skeleton')
-  .action(() => generator());
+  .action(() => generatorCli());
 
 module.exports = commander;

@@ -19,7 +19,7 @@ class Document {
 
   async buildTemplate(data, type) {
     const tableContent = table(data);
-    const out = createWriteStream(join('./', `${data.fileName}_${type}.docx`));
+    const out = createWriteStream(join('./', `${data.fileName || 'file'}_${type}.docx`));
 
     this.pObject.addText(data.projectName, projectTextConfig);
     this.pObject = this.docx.createTable(tableContent, tableStyle);
