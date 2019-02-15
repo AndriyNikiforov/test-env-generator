@@ -2,6 +2,7 @@
 const commander = require('commander');
 const { log } = require('console');
 
+const joke = require('../api/joke');
 const gitCli = require('./git');
 const generatorCli = require('./generator');
 const documentCli = require('./document');
@@ -17,12 +18,12 @@ const showText = () => {
   \_/ \____/ \____/           \__, |\__,_|  \__\___/ \___/|_|
                                  | |
                                  |_|
-                                                 __     ____
-                                                /  |   / ___|
-                                        __   __ `| |  / /___
-                                        \ \ / /  | |  | ___ \
-                                         \ V /  _| |__| \_/ |
-                                          \_/   \___(_)_____/
+                                                 __    ______
+                                                /  |  |___  /
+                                         __   __`| |     / /
+                                         \ \ / / | |    / /
+                                          \ V / _| |__./ /
+                                           \_/  \___(_)_/
     */
   }).toString()
     .replace(/^[^\/]+\/\*!?/, '')
@@ -36,6 +37,11 @@ commander
   .command('v')
   .description('beautifully version showed')
   .action(() => showText());
+
+commander
+  .command('s')
+  .description('???')
+  .action(() => joke);
 
 /**
  * @description Command call generate documents cli
