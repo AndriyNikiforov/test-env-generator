@@ -41,7 +41,7 @@ commander
 commander
   .command('s')
   .description('???')
-  .action(() => joke);
+  .action(() => joke());
 
 /**
  * @description Command call generate documents cli
