@@ -2,7 +2,6 @@
 const commander = require('commander');
 const { log } = require('console');
 
-const joke = require('../api/joke');
 const gitCli = require('./git');
 const generatorCli = require('./generator');
 const documentCli = require('./document');
@@ -30,38 +29,21 @@ const showText = () => {
     .replace(/\*\/[^\/]+$/, ''));
 };
 
-/**
- * @description Show version package
- */
 commander
   .command('v')
-  .description('beautifully version showed')
+  .description('version')
   .action(() => showText());
 
-commander
-  .command('s')
-  .description('???')
-  .action(() => joke());
-
-/**
- * @description Command call generate documents cli
-*/
 commander
   .command('doc:gen')
   .description('Command generate documents')
   .action(() => documentCli());
 
-/**
- * @description Command call git cli interface
- */
 commander
   .command('git:cli')
   .description('call git cli for generate skeleton from git repository')
   .action(() => gitCli());
 
-/**
- * @description Command call cli for generate skeleton
- */
 commander
   .command('test:gen')
   .description('call cli for generate skeleton')
