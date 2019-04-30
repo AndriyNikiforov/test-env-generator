@@ -22,6 +22,12 @@ Options
 
 * ```teg info``` - show base information about commands
 
+## HOW TO MAKE SCREENSHOT
+[ABOUT](HOW_TO_MAKE_SCREENSHOT.md)
+
+## CHROMEDRIVER OPTIONS
+[OPTIONS](CONFIG_CHROMEDRIVER)
+
 ## CHANGELOG
 [CHANGELOG](CHANGELOG.md)
 
