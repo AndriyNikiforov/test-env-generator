@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V1.7.5
+* Refactoring
+* Add package with jest
+* Add file with chromedriver options
+
 ## V1.5.9
 * Refactoring
 * Update ui
