@@ -1,8 +1,8 @@
 /* eslint-disable class-methods-use-this */
-const fs = require('fs-extra');
 const Unzip = require('adm-zip');
 const { resolve } = require('path');
 const { error, log } = require('console');
+const { mkdir, remove } = require('fs-extra');
 
 /**
  * @class Zip
@@ -14,7 +14,7 @@ class Zip {
    */
   async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
-    await fs.mkdir('./qa-skeleton');
+    await mkdir('./qa-skeleton');
     await zip.extractAllTo('./qa-skeleton', true);
   }
 
@@ -28,7 +28,7 @@ class Zip {
     await zip.addLocalFolder(folderName, './');
     await zip.writeZip(`${name}.zip`);
 
-    await fs.remove(folderName, (bug) => {
+    await remove(folderName, (bug) => {
       if (bug) error(bug);
       log('EXCELLENT');
     });
