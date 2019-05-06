@@ -13,6 +13,7 @@ const {
 class Document {
   constructor() {
     this.docx = officegen(config);
+    this.copyPath = '../assets/docs/TEMPLATE_TEST_CASE.xlsx';
     this.pObject = this.docx.createP();
     this.messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
   }
@@ -33,6 +34,13 @@ class Document {
 
   async emptyTemplateDoc(pathToClone, format) {
     await copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
+      if (err) error(err);
+      log(...this.messageSuccess);
+    });
+  }
+
+  async getTemplate() {
+    copyFile(resolve(__dirname, this.copyPath), './test-template-table.xlsx', (err) => {
       if (err) error(err);
       log(...this.messageSuccess);
     });

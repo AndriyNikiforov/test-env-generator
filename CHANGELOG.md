@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V1.8.0
+* Refactoring
+* Add template table test case
+
 ## V1.7.5
 * Refactoring
 * Add package with jest

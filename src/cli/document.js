@@ -7,7 +7,13 @@ const questions = [
     type: 'list',
     name: 'type',
     message: 'Select the operation',
-    choices: ['test-steps', 'test-case', 'generate-doc-template', 'generate-odt-template'],
+    choices: [
+      'test-steps',
+      'test-case',
+      'generate-doc-template',
+      'generate-odt-template',
+      'generate-xlsx-template',
+    ],
   },
 ];
 
@@ -66,6 +72,9 @@ module.exports = () => {
           break;
         case 'generate-odt-template':
           documentApi.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt');
+          break;
+        case 'generate-xlsx-template':
+          documentApi.getTemplate();
           break;
         default:
           break;
