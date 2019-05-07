@@ -25,7 +25,9 @@
     "selenium",
     "selenium-webdriver",
     "webdriver.io",
-    "mocha"
+    "mocha",
+    "jest",
+    "test-case"
   ],
   "repository": {
     "type": "git",
