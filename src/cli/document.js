@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const { prompt } = require('inquirer');
 const configCase = require('../config/testCaseCli');
 const documentApi = require('../api/document');
 
@@ -56,15 +56,15 @@ const configSteps = [
 ];
 
 module.exports = () => {
-  inquirer.prompt(questions)
+  prompt(questions)
     .then((data) => {
       switch (data.type) {
         case 'test-steps':
-          inquirer.prompt(configSteps)
+          prompt(configSteps)
             .then(answer => documentApi.buildTemplate(answer, 'test-steps'));
           break;
         case 'test-case':
-          inquirer.prompt(configCase)
+          prompt(configCase)
             .then(answer => documentApi.buildTemplate(answer, 'test-case'));
           break;
         case 'generate-doc-template':

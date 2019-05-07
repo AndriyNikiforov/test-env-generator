@@ -4,10 +4,7 @@ const { resolve, join } = require('path');
 const { createWriteStream, copyFile } = require('fs-extra');
 
 const {
-  table,
-  tableStyle,
-  config,
-  projectTextConfig,
+  table, tableStyle, config, projectTextConfig,
 } = require('../config/testCase');
 
 class Document {

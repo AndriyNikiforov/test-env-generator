@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const { prompt } = require('inquirer');
 const { cloneSkeleton } = require('../api/git');
 
 const question = [
@@ -11,7 +11,7 @@ const question = [
 ];
 
 module.exports = () => {
-  inquirer.prompt(question)
+  prompt(question)
     .then((answer) => {
       switch (answer.gitRepository) {
         case 'selenium':

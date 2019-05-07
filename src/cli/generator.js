@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const { prompt } = require('inquirer');
 const { exactArch } = require('../api/zip');
 
 const questions = [
@@ -11,7 +11,7 @@ const questions = [
 ];
 
 module.exports = () => {
-  inquirer.prompt(questions)
+  prompt(questions)
     .then((param) => {
       switch (param.type) {
         case 'selenium':
