@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## V2.0.0
+* Add generation docker files
+* Refactoring
+
 ## V1.8.0
 * Refactoring
 * Add template table test case

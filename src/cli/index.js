@@ -3,12 +3,14 @@ const commander = require('commander');
 const { log } = require('console');
 
 const gitCli = require('./git');
+const dockerCli = require('./docker');
 const generatorCli = require('./generator');
 const documentCli = require('./document');
 
 const showText = () => {
   log((() => {
     /*
+
  _____ _____ _____                          _              _
 |_   _|  ___|  __ \                        | |            | |
   | | | |__ | |  \/  ______    __ _  __ _  | |_ ___   ___ | |
@@ -17,15 +19,14 @@ const showText = () => {
   \_/ \____/ \____/           \__, |\__,_|  \__\___/ \___/|_|
                                  | |
                                  |_|
-                                                 __    _____
-                                                /  |  |  _  |
-                                         __   __`| |   \ V /
-                                         \ \ / / | |   / _ \
-                                          \ V / _| |__| |_| |
-                                           \_/  \___(_)_____/
+                                                _____  _____
+                                               / __  \|  _  |
+                                        __   __`' / /'| |/' |
+                                        \ \ / /  / /  |  /| |
+                                         \ V / ./ /___\ |_/ /
+                                          \_/  \_____(_)___/
 
-
-*/
+                                          */
   }).toString()
     .replace(/^[^\/]+\/\*!?/, '')
     .replace(/\*\/[^\/]+$/, ''));
@@ -35,6 +36,11 @@ commander
   .command('v')
   .description('version')
   .action(() => showText());
+
+commander
+  .command('docker:gen')
+  .description('Command generate docker files')
+  .action(() => dockerCli());
 
 commander
   .command('doc:gen')
