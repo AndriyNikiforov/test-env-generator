@@ -1,7 +1,5 @@
 const { log } = require('console');
 const { prompt } = require('inquirer');
-
-const configCase = require('../config/testCaseCli');
 const { buildTemplate, emptyTemplateDoc, getTemplate } = require('../api/document');
 
 const questions = [
@@ -16,6 +14,54 @@ const questions = [
       'generate-odt-template',
       'generate-xlsx-template',
     ],
+  },
+];
+
+const configCase = [
+  {
+    type: 'input',
+    name: 'fileName',
+    message: 'File name:',
+  },
+  {
+    type: 'input',
+    name: 'projectName',
+    message: 'Project name:',
+  },
+  {
+    type: 'input',
+    name: 'testDesignedBy',
+    message: 'Test designed by:',
+  },
+  {
+    type: 'input',
+    name: 'testTitle',
+    message: 'Test title',
+  },
+  {
+    type: 'input',
+    name: 'testPriority',
+    message: 'Test priority:',
+  },
+  {
+    type: 'input',
+    name: 'testExpectRes',
+    message: 'Expected results:',
+  },
+  {
+    type: 'input',
+    name: 'testDescription',
+    message: 'Test description',
+  },
+  {
+    type: 'input',
+    name: 'testExecDate',
+    message: 'Test execution date',
+  },
+  {
+    type: 'input',
+    name: 'testDesignedDate',
+    message: 'Test designed date',
   },
 ];
 
