@@ -27,7 +27,9 @@
     "webdriver.io",
     "mocha",
     "jest",
-    "test-case"
+    "test-case",
+    "docker",
+    "docker-compose"
   ],
   "repository": {
     "type": "git",

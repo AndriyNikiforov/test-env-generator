@@ -10,8 +10,8 @@ const questions = [
     name: 'type',
     message: 'Select the operation',
     choices: [
-      'test-steps',
       'test-case',
+      'test-steps',
       'generate-doc-template',
       'generate-odt-template',
       'generate-xlsx-template',

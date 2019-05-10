@@ -27,7 +27,8 @@ const showText = () => {
                                           \_/  \_____(_)___/
 
                                           */
-  }).toString()
+  })
+    .toString()
     .replace(/^[^\/]+\/\*!?/, '')
     .replace(/\*\/[^\/]+$/, ''));
 };
