@@ -1,7 +1,7 @@
 const { prompt } = require('inquirer');
-const { error, log } = require('console');
 const { resolve } = require('path');
 const { copyFile } = require('fs-extra');
+const { error, log } = require('console');
 
 const path = '../assets/docker/';
 const messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
@@ -10,31 +10,33 @@ const question = [
     type: 'list',
     name: 'docker',
     message: 'Select doceker file',
-    choices: ['simple', 'with noVNC', 'three node noVNC']
-  }
+    choices: ['simple', 'with noVNC', 'three node noVNC'],
+  },
 ];
+
+const move = (fileName) => {
+  copyFile(resolve(__dirname, path.concat(fileName)), 'qa-docker-compose.yml',
+    (err) => {
+      if (err) error(err);
+      log(...messageSuccess);
+    });
+};
 
 module.exports = () => {
   prompt(question)
     .then((answer) => {
       switch (answer.docker) {
         case 'simple':
-          copyFile(resolve(__dirname, path.concat('docker-compose-simple.yml')), 'qa-docker-compose.yml', (err) => {
-            if (err) error(err);
-            log(...messageSuccess);
-          });
-         break;
+          move('docker-compose-simple.yml');
+          break;
         case 'with noVNC':
-          copyFile(resolve(__dirname, path.concat('docker-compose-novnc.yml')), 'qa-docker-compose.yml', (err) => {
-            if (err) error(err);
-            log(...messageSuccess);
-          });
+          move('docker-compose-novnc.yml');
           break;
         case 'three node noVNC':
-          copyFile(resolve(__dirname, path.concate('docker-compose.yml')), 'qa-docker-compose.yml', (err) => {
-            if (err) error(err);
-            log(...messageSuccess);
-          });
+          move('docker-compose.yml');
+          break;
+        default:
+          log('Pleas try again');
           break;
       }
     });
