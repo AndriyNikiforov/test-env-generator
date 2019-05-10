@@ -8,20 +8,12 @@ const { mkdir, remove } = require('fs-extra');
  * @class Zip
  */
 class Zip {
-  /**
-   * @description Execute zip archive
-   * @param {String} pathToArch
-   */
   async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
     await mkdir('./qa-skeleton');
     await zip.extractAllTo('./qa-skeleton', true);
   }
 
-  /**
-   * @description Make zip archive
-   * @param {String} name
-   */
   async makeArch(name, folderName) {
     const zip = new Unzip();
 

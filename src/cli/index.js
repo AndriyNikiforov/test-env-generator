@@ -49,12 +49,12 @@ commander
 
 commander
   .command('git:cli')
-  .description('call git cli for generate skeleton from git repository')
+  .description('Call git cli for generate skeleton from git repository')
   .action(() => gitCli());
 
 commander
   .command('test:gen')
-  .description('call cli for generate skeleton')
+  .description('Call cli for generate skeleton')
   .action(() => generatorCli());
 
 module.exports = commander;

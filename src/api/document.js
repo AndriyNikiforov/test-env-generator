@@ -10,14 +10,14 @@ const {
 class Document {
   constructor() {
     this.docx = officegen(config);
-    this.copyPath = '../assets/docs/TEMPLATE_TEST_CASE.xlsx';
     this.pObject = this.docx.createP();
+    this.copyPath = '../assets/docs/TEMPLATE_TEST_CASE.xlsx';
     this.messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
   }
 
   async buildTemplate(data, type) {
-    const tableContent = table(data);
     const out = createWriteStream(join('./', `${data.fileName || 'file'}_${type}.docx`));
+    const tableContent = table(data);
 
     this.pObject.addText(data.projectName, projectTextConfig);
     this.pObject = this.docx.createTable(tableContent, tableStyle);

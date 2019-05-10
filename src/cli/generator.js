@@ -1,3 +1,4 @@
+const { log } = require('console');
 const { prompt } = require('inquirer');
 const { exactArch } = require('../api/zip');
 
@@ -27,6 +28,7 @@ module.exports = () => {
           exactArch('../assets/selje.zip');
           break;
         default:
+          log('Something error');
           break;
       }
     })

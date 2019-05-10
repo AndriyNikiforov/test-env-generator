@@ -14,13 +14,11 @@ const question = [
   },
 ];
 
-const move = (fileName) => {
-  copyFile(resolve(__dirname, path.concat(fileName)), 'qa-docker-compose.yml',
-    (err) => {
-      if (err) error(err);
-      log(...messageSuccess);
-    });
-};
+const move = fileName => copyFile(resolve(__dirname, path.concat(fileName)), 'qa-docker-compose.yml',
+  (err) => {
+    if (err) error(err);
+    log(...messageSuccess);
+  });
 
 module.exports = () => {
   prompt(question)

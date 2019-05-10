@@ -1,3 +1,4 @@
+const { log } = require('console');
 const { prompt } = require('inquirer');
 const configCase = require('../config/testCaseCli');
 const documentApi = require('../api/document');
@@ -77,6 +78,7 @@ module.exports = () => {
           documentApi.getTemplate();
           break;
         default:
+          log('Something error');
           break;
       }
     });
