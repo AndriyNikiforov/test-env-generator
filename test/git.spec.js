@@ -10,11 +10,7 @@ describe('Test git api', () => {
   it('test clone repository', async () => {
     await clone('AndriyNikiforov/appiumwdblui', './test/tmp', (err) => {
       if (err) error(err);
-
-      access('./test/tmp/README.md', (error) => {
-        assert.isNull(error);
-      });
-
+      access('./test/tmp/README.md', error => assert.isNull(error));
       remove('./test/tmp');
     });
   });

@@ -4,8 +4,8 @@ const { log } = require('console');
 
 const gitCli = require('./git');
 const dockerCli = require('./docker');
-const generatorCli = require('./generator');
 const documentCli = require('./document');
+const generatorCli = require('./generator');
 
 const showText = () => {
   log((() => {

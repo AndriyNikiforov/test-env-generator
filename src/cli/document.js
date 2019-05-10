@@ -1,7 +1,8 @@
 const { log } = require('console');
 const { prompt } = require('inquirer');
+
 const configCase = require('../config/testCaseCli');
-const documentApi = require('../api/document');
+const { buildTemplate, emptyTemplateDoc, getTemplate } = require('../api/document');
 
 const questions = [
   {
@@ -62,20 +63,20 @@ module.exports = () => {
       switch (data.type) {
         case 'test-steps':
           prompt(configSteps)
-            .then(answer => documentApi.buildTemplate(answer, 'test-steps'));
+            .then(answer => buildTemplate(answer, 'test-steps'));
           break;
         case 'test-case':
           prompt(configCase)
-            .then(answer => documentApi.buildTemplate(answer, 'test-case'));
+            .then(answer => buildTemplate(answer, 'test-case'));
           break;
         case 'generate-doc-template':
-          documentApi.emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc');
+          emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc');
           break;
         case 'generate-odt-template':
-          documentApi.emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt');
+          emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt');
           break;
         case 'generate-xlsx-template':
-          documentApi.getTemplate();
+          getTemplate();
           break;
         default:
           log('Something error');

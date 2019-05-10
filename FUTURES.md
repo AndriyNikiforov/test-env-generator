@@ -1,4 +1,4 @@
-# Version 1.7
+# Version #.#
 
 LIST of FUTURES
 * Optimization performance

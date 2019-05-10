@@ -15,7 +15,7 @@ describe('Test zip', () => {
   it('executing zip', () => {
     const zip = new Unzip(resolve(__dirname, '../lib/assets/selblui.zip'));
     zip.extractAllToAsync(EXEC_ARCH_PATH, true, (err) => {
-      if (err) error('ERROR: ',err);
+      if (err) error('ERROR: ', err);
 
       access('./test/ziptmp/selblui/README.md', (err) => {
         assert.isNull(err);

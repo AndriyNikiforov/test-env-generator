@@ -4,7 +4,6 @@ const { copyFile } = require('fs-extra');
 const { error, log } = require('console');
 
 const path = '../assets/docker/';
-const messageSuccess = ['\x1b[36m%s\x1b[0m', 'SUCCESS'];
 const question = [
   {
     type: 'list',
@@ -17,7 +16,7 @@ const question = [
 const move = fileName => copyFile(resolve(__dirname, path.concat(fileName)), 'qa-docker-compose.yml',
   (err) => {
     if (err) error(err);
-    log(...messageSuccess);
+    log('Success');
   });
 
 module.exports = () => {

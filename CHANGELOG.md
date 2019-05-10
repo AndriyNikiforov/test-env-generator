@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## V2.0.0
-* Add generation docker files
+* Add generation docker files api
 * Refactoring
 
 ## V1.8.0
