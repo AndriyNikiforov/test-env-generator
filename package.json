@@ -8,7 +8,6 @@
     "uglify": "uglifyjs --compress --mangle -- ./lib/index.js",
     "lint:eslint": "eslint ./src",
     "lint:jshint": "jshint ./src",
-    "gendoc": "jsdoc2md",
     "test": "mocha",
     "teg": "node index.js"
   },
