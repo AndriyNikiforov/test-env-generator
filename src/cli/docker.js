@@ -3,7 +3,6 @@ const { resolve } = require('path');
 const { copyFile } = require('fs-extra');
 const { error, log } = require('console');
 
-const path = '../assets/docker/';
 const question = [
   {
     type: 'list',
@@ -13,7 +12,7 @@ const question = [
   },
 ];
 
-const move = fileName => copyFile(resolve(__dirname, path.concat(fileName)), 'qa-docker-compose.yml',
+const move = fileName => copyFile(resolve(__dirname, '../assets/docker/'.concat(fileName)), 'qa-docker-compose.yml',
   (err) => {
     if (err) error(err);
     log('Success');

@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 const commander = require('commander');
 const { log } = require('console');
 

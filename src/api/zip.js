@@ -4,12 +4,10 @@ const { resolve } = require('path');
 const { error, log } = require('console');
 const { mkdir, remove } = require('fs-extra');
 
-/**
- * @class Zip
- */
 class Zip {
   async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
+
     await mkdir('./qa-skeleton');
     await zip.extractAllTo('./qa-skeleton', true);
   }
@@ -20,8 +18,8 @@ class Zip {
     await zip.addLocalFolder(folderName, './');
     await zip.writeZip(`${name}.zip`);
 
-    await remove(folderName, (bug) => {
-      if (bug) error(bug);
+    await remove(folderName, (err) => {
+      if (err) error(err);
       log('EXCELLENT');
     });
   }

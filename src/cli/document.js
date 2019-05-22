@@ -8,9 +8,9 @@ const questions = [
     name: 'type',
     message: 'Select the operation',
     choices: [
-      'generate-doc-template',
-      'generate-odt-template',
-      'generate-xlsx-template',
+      'generate doc template',
+      'generate odt template',
+      'generate xlsx template',
     ],
   },
 ];
@@ -19,13 +19,13 @@ module.exports = () => {
   prompt(questions)
     .then((data) => {
       switch (data.type) {
-        case 'generate-doc-template':
+        case 'generate doc template':
           emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc');
           break;
-        case 'generate-odt-template':
+        case 'generate odt template':
           emptyTemplateDoc('../assets/docs/test-case-template0.odt', 'odt');
           break;
-        case 'generate-xlsx-template':
+        case 'generate xlsx template':
           getTemplate();
           break;
         default:
