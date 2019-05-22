@@ -66,8 +66,7 @@
     "eslint-plugin-import": "^2.14.0",
     "jshint": "^2.9.7",
     "lodash": "^4.17.11",
-    "mocha": "^5.2.0",
-    "should": "^13.2.3"
+    "mocha": "^5.2.0"
   },
   "dependencies": {
     "adm-zip": "^0.4.13",
