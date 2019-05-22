@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
@@ -67,14 +67,12 @@
     "jshint": "^2.9.7",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "should": "^13.2.3",
-    "unit": "^1.0.4"
+    "should": "^13.2.3"
   },
   "dependencies": {
     "adm-zip": "^0.4.13",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.1",
-    "inquirer": "^6.2.2",
-    "officegen": "^0.4.7"
+    "inquirer": "^6.2.2"
   }
 }

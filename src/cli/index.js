@@ -7,36 +7,10 @@ const dockerCli = require('./docker');
 const documentCli = require('./document');
 const generatorCli = require('./generator');
 
-const showText = () => {
-  log((() => {
-    /*
-
- _____ _____ _____                          _              _
-|_   _|  ___|  __ \                        | |            | |
-  | | | |__ | |  \/  ______    __ _  __ _  | |_ ___   ___ | |
-  | | |  __|| | __  |______|  / _` |/ _` | | __/ _ \ / _ \| |
-  | | | |___| |_\ \          | (_| | (_| | | || (_) | (_) | |
-  \_/ \____/ \____/           \__, |\__,_|  \__\___/ \___/|_|
-                                 | |
-                                 |_|
-                                                _____  _____
-                                               / __  \|  _  |
-                                        __   __`' / /'| |/' |
-                                        \ \ / /  / /  |  /| |
-                                         \ V / ./ /___\ |_/ /
-                                          \_/  \_____(_)___/
-
-                                          */
-  })
-    .toString()
-    .replace(/^[^\/]+\/\*!?/, '')
-    .replace(/\*\/[^\/]+$/, ''));
-};
-
 commander
   .command('v')
   .description('version')
-  .action(() => showText());
+  .action(() => log('v 2.0'));
 
 commander
   .command('docker:gen')
