@@ -3,6 +3,7 @@
 ## V2.0.0
 * Add generation docker files api
 * Refactoring
+* Add locus for load testing
 
 ## V1.8.0
 * Refactoring
