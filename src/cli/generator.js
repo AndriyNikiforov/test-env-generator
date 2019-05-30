@@ -12,7 +12,7 @@ const questions = [
       'appium',
       'wdio',
       'selenium+jest',
-      'locus'
+      'locus',
     ],
   },
 ];
@@ -34,8 +34,8 @@ module.exports = () => {
           exactArch('../assets/selje.zip');
           break;
         case 'locus':
-            exactArch('../assets/locus.zip');
-            break;
+          exactArch('../assets/locus.zip');
+          break;
         default:
           log('Something error');
           break;
