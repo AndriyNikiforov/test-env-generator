@@ -2,6 +2,7 @@ const commander = require('commander');
 const { log } = require('console');
 
 const gitCli = require('./git');
+const configCli = require('../api/config');
 const dockerCli = require('./docker');
 const documentCli = require('./document');
 const generatorCli = require('./generator');
@@ -30,5 +31,10 @@ commander
   .command('test:gen')
   .description('Call cli for generate skeleton')
   .action(() => generatorCli());
+
+commander
+  .command('config:gen')
+  .description('Generate chrome config')
+  .action(() => configCli());
 
 module.exports = commander;
