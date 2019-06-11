@@ -2,6 +2,8 @@
 
 [![Package Quality](https://npm.packagequality.com/badge/test-env-generator.png)](https://packagequality.com/#?package=test-env-generator)
 
+[![DeepScan grade](https://deepscan.io/api/teams/4034/projects/5840/branches/46512/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=4034&pid=5840&bid=46512)
+
 TEG is a tool for generate skeleton for fast start write tests.
 
 ## Installation
