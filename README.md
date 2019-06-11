@@ -12,7 +12,7 @@ TEG is a tool for generate skeleton for fast start write tests.
 
 ## Usage
 
-* Run generator with path where must be unzip ``` teg <option> <path> ```
+* Run generator with path where must be unzip ```teg <option> <path>```
 * Run help comand ``` teg -h ```
 
 Options
@@ -56,4 +56,4 @@ If you found bug or problem, please make issues in git repository. And if you ca
 ## Pull request template
 [PULL_REQUEST](PULL_REQUEST_TEMPLATE.md)
 
-# Thanks for using !!
+# Thanks for using
