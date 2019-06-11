@@ -1,5 +1,9 @@
 const runner = require('./cli');
 
+/**
+ * Create runner object
+ */
+
 module.exports = {
   cli: () => {
     runner.parse(process.argv);

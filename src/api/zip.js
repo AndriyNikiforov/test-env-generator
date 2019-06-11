@@ -5,6 +5,10 @@ const { error, log } = require('console');
 const { mkdir, remove } = require('fs-extra');
 
 class Zip {
+  /**
+   * Exact arch in folder
+   * @param {String} pathToArch
+   */
   async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
 
@@ -12,6 +16,11 @@ class Zip {
     await zip.extractAllTo('./qa-skeleton', true);
   }
 
+  /**
+   * Create archive with test env
+   * @param {String} name
+   * @param {String} folderName
+   */
   async makeArch(name, folderName) {
     const zip = new Unzip();
 

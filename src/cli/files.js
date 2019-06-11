@@ -12,6 +12,11 @@ const question = [
   },
 ];
 
+/**
+ * Move file from asset directory to user directory
+ * @param {String} fileName
+ * @param {String} afterName
+ */
 const move = (fileName, afterName) => copyFile(resolve(__dirname, fileName), afterName,
   (err) => {
     if (err) error(err);
