@@ -1,6 +1,7 @@
+const cloneSkeleton = require('../lib/api/git');
+
 const { error } = require('console');
 const { assert } = require('chai');
-const { cloneSkeleton } = require('../lib/api/git');
 const { mkdir, access, remove } = require('fs-extra');
 
 describe('Test git api', () => {

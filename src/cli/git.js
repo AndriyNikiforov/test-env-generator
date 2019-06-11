@@ -1,6 +1,6 @@
 const { log } = require('console');
 const { prompt } = require('inquirer');
-const { cloneSkeleton } = require('../api/git');
+const cloneSkeleton = require('../api/git');
 
 const question = [
   {
