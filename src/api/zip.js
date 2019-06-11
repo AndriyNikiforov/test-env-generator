@@ -20,7 +20,7 @@ class Zip {
 
     await remove(folderName, (err) => {
       if (err) error(err);
-      log('EXCELLENT');
+      log('SUCCESS');
     });
   }
 }

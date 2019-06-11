@@ -1,11 +1,10 @@
 {
   "name": "test-env-generator",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
     "build": "babel ./src -d ./lib",
-    "uglify": "uglifyjs --compress --mangle -- ./lib/index.js",
     "lint:eslint": "eslint ./src",
     "lint:jshint": "jshint ./src",
     "test": "mocha",

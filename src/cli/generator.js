@@ -13,6 +13,7 @@ const questions = [
       'wdio',
       'selenium+jest',
       'locus',
+      'python+selenium',
     ],
   },
 ];
@@ -35,6 +36,9 @@ module.exports = () => {
           break;
         case 'locus':
           exactArch('../assets/locus.zip');
+          break;
+        case 'python+selenium':
+          exactArch('../assets/pyT.zip');
           break;
         default:
           log('Something error');

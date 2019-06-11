@@ -9,7 +9,7 @@ const generatorCli = require('./generator');
 commander
   .command('v')
   .description('version')
-  .action(() => log('v 2.0'));
+  .action(() => log('v 2.1'));
 
 commander
   .command('file:gen')
