@@ -1,6 +1,6 @@
-const { error, log } = require('console');
 const { resolve } = require('path');
 const { copyFile } = require('fs-extra');
+const { error, log } = require('console');
 
 class Document {
   // eslint-disable-next-line class-methods-use-this

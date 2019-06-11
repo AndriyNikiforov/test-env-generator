@@ -18,6 +18,7 @@ Options
 * appium
 * webdriver.io
 * locus
+* python selenium
 
 ## Help command
 
