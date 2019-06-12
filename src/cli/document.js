@@ -1,4 +1,3 @@
-const { log } = require('console');
 const { prompt } = require('inquirer');
 const { emptyTemplateDoc, getTemplate } = require('../api/document');
 
@@ -29,7 +28,6 @@ module.exports = () => {
           getTemplate();
           break;
         default:
-          log('Something error');
           break;
       }
     });

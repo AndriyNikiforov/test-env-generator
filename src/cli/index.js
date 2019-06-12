@@ -1,15 +1,8 @@
 const commander = require('commander');
-const { log } = require('console');
-
 const gitCli = require('./git');
 const dockerCli = require('./files');
 const documentCli = require('./document');
 const generatorCli = require('./generator');
-
-commander
-  .command('v')
-  .description('version')
-  .action(() => log('v 2.1'));
 
 commander
   .command('file:gen')

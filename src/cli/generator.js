@@ -1,4 +1,3 @@
-const { log } = require('console');
 const { prompt } = require('inquirer');
 const { exactArch } = require('../api/zip');
 
@@ -41,7 +40,6 @@ module.exports = () => {
           exactArch('../assets/pyT.zip');
           break;
         default:
-          log('Something error');
           break;
       }
     })

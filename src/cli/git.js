@@ -1,4 +1,3 @@
-const { log } = require('console');
 const { prompt } = require('inquirer');
 const cloneSkeleton = require('../api/git');
 
@@ -25,7 +24,6 @@ module.exports = () => {
           cloneSkeleton('https://github.com/AndriyNikiforov/selwdioblui.git', 'selwdioblui');
           break;
         default:
-          log('Something error');
           break;
       }
     });

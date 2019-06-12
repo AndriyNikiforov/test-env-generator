@@ -40,7 +40,6 @@ module.exports = () => {
           move('../assets/config/index.js', 'chrome.config.js');
           break;
         default:
-          log('Pleas try again');
           break;
       }
     });

@@ -4,6 +4,8 @@
 
 [![DeepScan grade](https://deepscan.io/api/teams/4034/projects/5840/branches/46512/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=4034&pid=5840&bid=46512)
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/AndriyNikiforov/test-env-generator?branch=dev-2.1)](https://bettercodehub.com/)
+
 TEG is a tool for generate skeleton for fast start write tests.
 
 ## Installation
