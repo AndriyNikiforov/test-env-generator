@@ -1,5 +1,5 @@
-const { error } = require('console');
 const { spawn } = require('child_process');
+const { error, log } = require('console');
 const { makeArch } = require('./zip');
 
 /**
@@ -7,8 +7,8 @@ const { makeArch } = require('./zip');
  * @param {String} address
  * @param {String} folderName
  */
-const cloneSkeleton = async (address, folderName) => {
-  const process = await spawn('git', ['clone', address]);
+const cloneSkeleton = (address, folderName) => {
+  const process = spawn('git', ['clone', address]);
   process.on('close', () => makeArch('skeleton', folderName));
   process.on('error', err => error(err));
 };
