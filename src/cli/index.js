@@ -24,4 +24,9 @@ commander
   .description('Call cli for generate skeleton')
   .action(() => generatorCli());
 
-module.exports = commander;
+module.exports = {
+  cli: () => {
+    commander.parse(process.argv);
+    if (commander.args.length === 0) commander.help();
+  },
+};

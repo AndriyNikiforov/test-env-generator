@@ -10,18 +10,24 @@ const question = [
   },
 ];
 
+const address = {
+  selenium: 'https://github.com/AndriyNikiforov/selblui.git',
+  appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
+  wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git'
+};
+
 module.exports = () => {
   prompt(question)
     .then((answer) => {
       switch (answer.gitRepository) {
         case 'selenium':
-          cloneSkeleton('https://github.com/AndriyNikiforov/selblui.git', 'selblui');
+          cloneSkeleton(address.selenium, 'selblui');
           break;
         case 'appium':
-          cloneSkeleton('https://github.com/AndriyNikiforov/appiumwdblui.git', 'appiumwdblui');
+          cloneSkeleton(address.appium, 'appiumwdblui');
           break;
         case 'wdio':
-          cloneSkeleton('https://github.com/AndriyNikiforov/selwdioblui.git', 'selwdioblui');
+          cloneSkeleton(address.wdio, 'selwdioblui');
           break;
         default:
           break;
