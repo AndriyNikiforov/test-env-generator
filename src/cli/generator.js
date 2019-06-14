@@ -6,14 +6,7 @@ const questions = [
     type: 'list',
     name: 'type',
     message: 'Select the test skeleton to generate:',
-    choices: [
-      'selenium',
-      'appium',
-      'wdio',
-      'selenium+jest',
-      'locus',
-      'python+selenium',
-    ],
+    choices: ['selenium', 'appium', 'wdio', 'selenium+jest', 'locus', 'python+selenium'],
   },
 ];
 
@@ -42,6 +35,5 @@ module.exports = () => {
         default:
           break;
       }
-    })
-    .catch();
+    }).catch();
 };

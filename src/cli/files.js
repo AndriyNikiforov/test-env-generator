@@ -8,12 +8,7 @@ const question = [
     type: 'list',
     name: 'docker',
     message: 'Select file to generate',
-    choices: [
-      'docker-simple',
-      'docker-with-noVNC',
-      'docker-three-node-noVNC',
-      'chrome-config'
-    ],
+    choices: ['docker-simple', 'docker-with-noVNC', 'docker-three-node-noVNC', 'chrome-config'],
   },
 ];
 

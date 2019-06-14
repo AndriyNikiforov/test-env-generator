@@ -6,11 +6,7 @@ const questions = [
     type: 'list',
     name: 'type',
     message: 'Select to generating template',
-    choices: [
-      'doc',
-      'odt',
-      'xlsx',
-    ],
+    choices: ['doc', 'odt', 'xlsx'],
   },
 ];
 
