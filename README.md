@@ -6,6 +6,8 @@
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/AndriyNikiforov/test-env-generator?branch=dev-2.1)](https://bettercodehub.com/)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/bdbceca56dcd9d789d61/maintainability)](https://codeclimate.com/github/AndriyNikiforov/test-env-generator/maintainability)
+
 TEG is a tool for generate skeleton for fast start write tests.
 
 ## Installation
