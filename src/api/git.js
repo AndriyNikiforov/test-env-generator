@@ -1,5 +1,5 @@
 const { spawn } = require('child_process');
-const { error, log } = require('console');
+const { error } = require('console');
 const { makeArch } = require('./zip');
 
 /**

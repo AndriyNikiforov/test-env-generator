@@ -13,7 +13,7 @@ const question = [
 const address = {
   selenium: 'https://github.com/AndriyNikiforov/selblui.git',
   appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
-  wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git'
+  wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git',
 };
 
 module.exports = () => {
