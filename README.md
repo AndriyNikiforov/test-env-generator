@@ -8,6 +8,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bdbceca56dcd9d789d61/maintainability)](https://codeclimate.com/github/AndriyNikiforov/test-env-generator/maintainability)
 
+[![install size](https://packagephobia.now.sh/badge?p=test-env-generator)](https://packagephobia.now.sh/result?p=test-env-generator)
+
 TEG is a tool for generate skeleton for fast start write tests.
 
 ## Installation

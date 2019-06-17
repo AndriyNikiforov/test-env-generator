@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
+const { log } = require('console');
 const { resolve } = require('path');
 const { copyFile } = require('fs-extra');
-const { error, log } = require('console');
 
 class Document {
   /**
@@ -11,7 +11,7 @@ class Document {
    */
   async emptyTemplateDoc(pathToClone, format) {
     await copyFile(resolve(__dirname, pathToClone), `./test-case-template.${format}`, (err) => {
-      if (err) error(err);
+      if (err) throw new Error(err);
       log('Success');
     });
   }
@@ -21,7 +21,7 @@ class Document {
    */
   async getTemplate() {
     await copyFile(resolve(__dirname, '../assets/docs/TEMPLATE_TEST_CASE.xlsx'), './test-template-table.xlsx', (err) => {
-      if (err) error(err);
+      if (err) throw new Error(err);
       log('Success');
     });
   }

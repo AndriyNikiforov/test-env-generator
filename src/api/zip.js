@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 const Unzip = require('adm-zip');
+const { log } = require('console');
 const { resolve } = require('path');
-const { error, log } = require('console');
 const { mkdir, remove } = require('fs-extra');
 
 class Zip {
@@ -28,8 +28,8 @@ class Zip {
     await zip.writeZip(`${name}.zip`);
 
     await remove(folderName, (err) => {
-      if (err) error(err);
-      log('SUCCESS');
+      if (err) throw new Error(err);
+      log('Success');
     });
   }
 }
