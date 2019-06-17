@@ -25,6 +25,7 @@ Options
 * webdriver.io
 * locus
 * python selenium
+* lighthouse (chrome dev tool for testing pages) + jest
 
 ## Help command
 
