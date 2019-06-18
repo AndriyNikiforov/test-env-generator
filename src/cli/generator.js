@@ -6,7 +6,7 @@ const questions = [
     type: 'list',
     name: 'type',
     message: 'Select the test skeleton to generate:',
-    choices: ['selenium', 'appium', 'wdio', 'selenium+jest', 'locus', 'python+selenium'],
+    choices: ['selenium', 'appium', 'selenium+jest', 'locus', 'python+selenium'],
   },
 ];
 
@@ -19,9 +19,6 @@ module.exports = () => {
           break;
         case 'appium':
           exactArch('../assets/appiumwdblui.zip');
-          break;
-        case 'wdio':
-          exactArch('../assets/selwdioblui.zip');
           break;
         case 'selenium+jest':
           exactArch('../assets/selje.zip');

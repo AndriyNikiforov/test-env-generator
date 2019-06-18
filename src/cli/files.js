@@ -8,7 +8,7 @@ const question = [
     type: 'list',
     name: 'docker',
     message: 'Select file to generate',
-    choices: ['docker-simple', 'docker-with-noVNC', 'docker-three-node-noVNC', 'chrome-config'],
+    choices: ['docker-simple', 'docker-with-noVNC', 'chrome-config'],
   },
 ];
 
@@ -32,9 +32,6 @@ module.exports = () => {
           break;
         case 'docker-with-noVNC':
           move('docker-compose-novnc.yml', 'qa-docker-compose.yml');
-          break;
-        case 'docker-three-node-noVNC':
-          move('docker-compose.yml', 'qa-docker-compose.yml');
           break;
         case 'chrome-config':
           move('../assets/config/index.js', 'chrome.config.js');
