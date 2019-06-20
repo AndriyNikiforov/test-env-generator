@@ -1,27 +1,14 @@
 const { prompt } = require('inquirer');
-
+const { fileQuestion } = require('./config/');
 const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
 
-const question = [
-  {
-    type: 'list',
-    name: 'docker',
-    message: 'Select file to generate',
-    choices: [
-      'docker-simple', 'docker-with-noVNC',
-      'chrome-config',
-      'doc',
-      'xlsx',
-    ],
-  },
-];
-
 module.exports = () => {
-  prompt(question)
+  prompt(fileQuestion)
     .then((answer) => {
       switch (answer.docker) {
         case 'docker-simple':
-          move('../assets/docker/docker-compose-simple.yml', 'qa-docker-compose.yml');
+          move('../assets/docker/docker-compose-simple.yml',
+            'qa-docker-compose.yml');
           break;
         case 'docker-with-noVNC':
           move('docker-compose-novnc.yml', 'qa-docker-compose.yml');
