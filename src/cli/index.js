@@ -1,18 +1,12 @@
 const commander = require('commander');
 const gitCli = require('./git');
-const dockerCli = require('./files');
-const documentCli = require('./document');
+const filesCli = require('./files');
 const generatorCli = require('./generator');
 
 commander
   .command('file:gen')
-  .description('Command generate docker files')
-  .action(() => dockerCli());
-
-commander
-  .command('doc:gen')
-  .description('Command generate documents')
-  .action(() => documentCli());
+  .description('Command generate files')
+  .action(() => filesCli());
 
 commander
   .command('git:cli')

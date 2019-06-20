@@ -1,27 +1,20 @@
 const { prompt } = require('inquirer');
-const { resolve } = require('path');
-const { copyFile } = require('fs-extra');
-const { error, log } = require('console');
+
+const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
 
 const question = [
   {
     type: 'list',
     name: 'docker',
     message: 'Select file to generate',
-    choices: ['docker-simple', 'docker-with-noVNC', 'chrome-config'],
+    choices: [
+      'docker-simple', 'docker-with-noVNC',
+      'chrome-config',
+      'doc',
+      'xlsx',
+    ],
   },
 ];
-
-/**
- * Move file from asset directory to user directory
- * @param {String} fileName
- * @param {String} afterName
- */
-const move = (fileName, afterName) => copyFile(resolve(__dirname, fileName), afterName,
-  (err) => {
-    if (err) error(err);
-    log('Success');
-  });
 
 module.exports = () => {
   prompt(question)
@@ -35,6 +28,12 @@ module.exports = () => {
           break;
         case 'chrome-config':
           move('../assets/config/index.js', 'chrome.config.js');
+          break;
+        case 'doc':
+          emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc');
+          break;
+        case 'xlsx':
+          getTemplate();
           break;
         default:
           break;

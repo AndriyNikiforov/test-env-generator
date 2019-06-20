@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
-const { log } = require('console');
 const { resolve } = require('path');
 const { copyFile } = require('fs-extra');
+const { log, error } = require('console');
 
-class Document {
+class Files {
   /**
    * Copy template to directory
    * @param {String} pathToClone
@@ -25,6 +25,20 @@ class Document {
       log('Success');
     });
   }
+
+  /**
+   * Move file to directory
+   * @param  {String}  fileName
+   * @param  {String}  afterName
+   * @return {Promise}
+   */
+  async move(fileName, afterName) {
+    copyFile(resolve(__dirname, fileName), afterName,
+      (err) => {
+        if (err) error(err);
+        log('Success');
+      });
+  }
 }
 
-module.exports = new Document();
+module.exports = new Files();
