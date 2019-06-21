@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## V2.1.0
+* Add generation python selenium
+* Refactoring
+* Update README.md
+
 ## V2.0.0
 * Add generation docker files api
 * Refactoring

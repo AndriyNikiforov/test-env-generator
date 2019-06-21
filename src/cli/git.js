@@ -1,31 +1,39 @@
-const { log } = require('console');
 const { prompt } = require('inquirer');
-const { cloneSkeleton } = require('../api/git');
+const cloneSkeleton = require('../api/git');
 
 const question = [
   {
     type: 'list',
     name: 'gitRepository',
     message: 'Select the test skeleton:',
-    choices: ['selenium', 'appium', 'wdio'],
+    choices: ['selenium', 'appium', 'wdio', 'lighthouse'],
   },
 ];
+
+const address = {
+  selenium: 'https://github.com/AndriyNikiforov/selblui.git',
+  appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
+  wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git',
+  lighthouse: 'https://github.com/AndriyNikiforov/lighthouse-tempalate.git',
+};
 
 module.exports = () => {
   prompt(question)
     .then((answer) => {
       switch (answer.gitRepository) {
         case 'selenium':
-          cloneSkeleton('https://github.com/AndriyNikiforov/selblui.git', 'selblui');
+          cloneSkeleton(address.selenium, 'selblui');
           break;
         case 'appium':
-          cloneSkeleton('https://github.com/AndriyNikiforov/appiumwdblui.git', 'appiumwdblui');
+          cloneSkeleton(address.appium, 'appiumwdblui');
           break;
         case 'wdio':
-          cloneSkeleton('https://github.com/AndriyNikiforov/selwdioblui.git', 'selwdioblui');
+          cloneSkeleton(address.wdio, 'selwdioblui');
+          break;
+        case 'lighthouse':
+          cloneSkeleton(address.lighthouse, 'lighthouse-tempalate');
           break;
         default:
-          log('Something error');
           break;
       }
     });
