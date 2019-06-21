@@ -2,21 +2,28 @@ const { prompt } = require('inquirer');
 const { exactArch } = require('../api/zip');
 const { generatorQuestion } = require('./config/');
 
+const path = {
+  appium: '../assets/appiumwdblui.zip',
+  selenium: '../assets/selblui.zip',
+  seleniumJest: '../assets/selje.zip',
+  pythonSelenium: '../assets/pyT.zip',
+};
+
 module.exports = () => {
   prompt(generatorQuestion)
     .then((param) => {
       switch (param.type) {
         case 'selenium':
-          exactArch('../assets/selblui.zip');
+          exactArch(path.selenium);
           break;
         case 'appium':
-          exactArch('../assets/appiumwdblui.zip');
+          exactArch(path.appium);
           break;
         case 'selenium+jest':
-          exactArch('../assets/selje.zip');
+          exactArch(path.seleniumJest);
           break;
         case 'python+selenium':
-          exactArch('../assets/pyT.zip');
+          exactArch(path.pythonSelenium);
           break;
         default:
           break;

@@ -2,21 +2,28 @@ const { prompt } = require('inquirer');
 const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
 const { fileQuestion } = require('./config/');
 
+const path = {
+  dockerSimple: '../assets/docker/docker-compose-simple.yml',
+  dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',
+  chromeConfig: '../assets/config/index.js',
+  doc: '../assets/docs/test-case-template.doc',
+};
+
 module.exports = () => {
   prompt(fileQuestion)
     .then((answer) => {
       switch (answer.docker) {
         case 'docker-simple':
-          move('../assets/docker/docker-compose-simple.yml', 'qa-docker-compose.yml');
+          move(path.dockerSimple, 'qa-docker-compose.yml');
           break;
         case 'docker-with-noVNC':
-          move('docker-compose-novnc.yml', 'qa-docker-compose.yml');
+          move(path.dockerNoVNC, 'qa-docker-compose.yml');
           break;
         case 'chrome-config':
-          move('../assets/config/index.js', 'chrome.config.js');
+          move(path.chromeConfig, 'chrome.config.js');
           break;
         case 'doc':
-          emptyTemplateDoc('../assets/docs/test-case-template.doc', 'doc');
+          emptyTemplateDoc(path.doc, 'doc');
           break;
         case 'xlsx':
           getTemplate();

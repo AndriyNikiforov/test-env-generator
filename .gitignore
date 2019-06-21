@@ -5,6 +5,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.history/
 .DS_Store
 skeleton/
 skeleton/__MACOSX

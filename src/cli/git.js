@@ -3,10 +3,10 @@ const cloneSkeleton = require('../api/git');
 const { gitQuestion } = require('./config/');
 
 const address = {
-  selenium: 'https://github.com/AndriyNikiforov/selblui.git',
-  appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
   wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git',
   locus: 'https://github.com/AndriyNikiforov/locust-simple-skeleton.git',
+  appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
+  selenium: 'https://github.com/AndriyNikiforov/selblui.git',
   lighthouse: 'https://github.com/AndriyNikiforov/lighthouse-tempalate.git',
 };
 
