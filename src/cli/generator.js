@@ -15,9 +15,6 @@ module.exports = () => {
         case 'selenium+jest':
           exactArch('../assets/selje.zip');
           break;
-        case 'locus':
-          exactArch('../assets/locus.zip');
-          break;
         case 'python+selenium':
           exactArch('../assets/pyT.zip');
           break;

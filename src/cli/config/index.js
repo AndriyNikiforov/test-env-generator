@@ -17,7 +17,10 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'Select the test skeleton to generate:',
-      choices: ['selenium', 'appium', 'selenium+jest', 'locus', 'python+selenium'],
+      choices: [
+        'selenium', 'appium',
+        'selenium+jest', 'python+selenium'
+      ],
     },
   ],
   gitQuestion: [
@@ -25,7 +28,10 @@ module.exports = {
       type: 'list',
       name: 'gitRepository',
       message: 'Select the test skeleton:',
-      choices: ['selenium', 'appium', 'wdio', 'lighthouse'],
+      choices: [
+        'selenium', 'appium',
+        'wdio', 'lighthouse', 'locus'
+      ],
     },
   ],
 };
