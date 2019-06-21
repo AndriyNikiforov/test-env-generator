@@ -1,22 +1,9 @@
 const { prompt } = require('inquirer');
 const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
-
-const question = [
-  {
-    type: 'list',
-    name: 'docker',
-    message: 'Select file to generate',
-    choices: [
-      'docker-simple', 'docker-with-noVNC',
-      'chrome-config',
-      'doc',
-      'xlsx',
-    ],
-  },
-];
+const { fileQuestion } = require('./config/');
 
 module.exports = () => {
-  prompt(question)
+  prompt(fileQuestion)
     .then((answer) => {
       switch (answer.docker) {
         case 'docker-simple':

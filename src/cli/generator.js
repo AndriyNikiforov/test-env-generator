@@ -1,17 +1,9 @@
 const { prompt } = require('inquirer');
 const { exactArch } = require('../api/zip');
-
-const questions = [
-  {
-    type: 'list',
-    name: 'type',
-    message: 'Select the test skeleton to generate:',
-    choices: ['selenium', 'appium', 'selenium+jest', 'locus', 'python+selenium'],
-  },
-];
+const { generatorQuestion } = require('./config/');
 
 module.exports = () => {
-  prompt(questions)
+  prompt(generatorQuestion)
     .then((param) => {
       switch (param.type) {
         case 'selenium':

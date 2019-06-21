@@ -1,14 +1,6 @@
 const { prompt } = require('inquirer');
 const cloneSkeleton = require('../api/git');
-
-const question = [
-  {
-    type: 'list',
-    name: 'gitRepository',
-    message: 'Select the test skeleton:',
-    choices: ['selenium', 'appium', 'wdio', 'lighthouse'],
-  },
-];
+const { gitQuestion } = require('./config/');
 
 const address = {
   selenium: 'https://github.com/AndriyNikiforov/selblui.git',
@@ -18,7 +10,7 @@ const address = {
 };
 
 module.exports = () => {
-  prompt(question)
+  prompt(gitQuestion)
     .then((answer) => {
       switch (answer.gitRepository) {
         case 'selenium':
