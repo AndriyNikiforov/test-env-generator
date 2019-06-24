@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 const { resolve } = require('path');
-const { copyFile } = require('fs-extra');
+const { copyFile } = require('fs');
 const { log, error } = require('console');
 
 class Files {

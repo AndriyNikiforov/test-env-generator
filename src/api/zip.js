@@ -1,8 +1,9 @@
 /* eslint-disable class-methods-use-this */
 const Unzip = require('adm-zip');
+const rimraf = require('rimraf');
 const { log } = require('console');
+const { mkdir } = require('fs');
 const { resolve } = require('path');
-const { mkdir, remove } = require('fs-extra');
 
 class Zip {
   /**
@@ -27,7 +28,7 @@ class Zip {
     await zip.addLocalFolder(folderName, './');
     await zip.writeZip(`${name}.zip`);
 
-    await remove(folderName, (err) => {
+    await rimraf(folderName, (err) => {
       if (err) throw new Error(err);
       log('Success');
     });

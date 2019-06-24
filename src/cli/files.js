@@ -3,10 +3,10 @@ const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
 const { fileQuestion } = require('./config/');
 
 const path = {
-  dockerSimple: '../assets/docker/docker-compose-simple.yml',
-  dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',
-  chromeConfig: '../assets/config/index.js',
   doc: '../assets/docs/test-case-template.doc',
+  dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',
+  dockerSimple: '../assets/docker/docker-compose-simple.yml',
+  chromeConfig: '../assets/config/index.js',
 };
 
 module.exports = () => {
