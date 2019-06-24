@@ -43,8 +43,7 @@ module.exports = () => {
         case 'locus':
           cloneSkeleton(address.locus, 'locust-simple-skeleton');
           break;
-        default:
-          break;
+        default: break;
       }
     });
 };

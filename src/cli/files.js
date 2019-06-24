@@ -28,8 +28,7 @@ module.exports = () => {
         case 'xlsx':
           getTemplate();
           break;
-        default:
-          break;
+        default: break;
       }
     });
 };

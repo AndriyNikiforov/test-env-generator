@@ -25,8 +25,7 @@ module.exports = () => {
         case 'python+selenium':
           exactArch(path.pythonSelenium);
           break;
-        default:
-          break;
+        default: break;
       }
     }).catch();
 };
