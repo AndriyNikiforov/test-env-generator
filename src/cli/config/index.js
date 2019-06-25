@@ -5,10 +5,8 @@ module.exports = {
       name: 'docker',
       message: 'Select file to generate',
       choices: [
-        'docker-simple', 'docker-with-noVNC',
-        'chrome-config',
-        'doc',
-        'xlsx',
+        'docker-simple', 'docker-with-noVNC', 'chrome-config',
+        'doc', 'xlsx',
       ],
     },
   ],
@@ -25,10 +23,7 @@ module.exports = {
       type: 'list',
       name: 'gitRepository',
       message: 'Select the test skeleton:',
-      choices: [
-        'selenium', 'appium',
-        'lighthouse', 'locus',
-      ],
+      choices: ['selenium', 'appium', 'lighthouse', 'locus'],
     },
   ],
 };
