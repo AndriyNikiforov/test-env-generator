@@ -17,7 +17,6 @@ const cloneSkeleton = (address, folderName) => {
 };
 
 const address = {
-  wdio: 'https://github.com/AndriyNikiforov/selwdioblui.git',
   locus: 'https://github.com/AndriyNikiforov/locust-simple-skeleton.git',
   appium: 'https://github.com/AndriyNikiforov/appiumwdblui.git',
   selenium: 'https://github.com/AndriyNikiforov/selblui.git',
@@ -33,9 +32,6 @@ module.exports = () => {
           break;
         case 'appium':
           cloneSkeleton(address.appium, 'appiumwdblui');
-          break;
-        case 'wdio':
-          cloneSkeleton(address.wdio, 'selwdioblui');
           break;
         case 'lighthouse':
           cloneSkeleton(address.lighthouse, 'lighthouse-tempalate');
