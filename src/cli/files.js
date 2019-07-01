@@ -1,9 +1,8 @@
 const { prompt } = require('inquirer');
-const { emptyTemplateDoc, getTemplate, move } = require('../api/files');
 const { fileQuestion } = require('./config/');
+const { getTemplate, move } = require('../api/files');
 
 const path = {
-  doc: '../assets/docs/test-case-template.doc',
   dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',
   dockerSimple: '../assets/docker/docker-compose-simple.yml',
   chromeConfig: '../assets/config/index.js',
@@ -22,10 +21,7 @@ module.exports = () => {
         case 'chrome-config':
           move(path.chromeConfig, 'chrome.config.js');
           break;
-        case 'doc':
-          emptyTemplateDoc(path.doc, 'doc');
-          break;
-        case 'xlsx':
+        case 'test-case-xlsx':
           getTemplate();
           break;
         default: break;

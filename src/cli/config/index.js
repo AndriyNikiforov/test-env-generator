@@ -5,8 +5,7 @@ module.exports = {
       name: 'docker',
       message: 'Select file to generate',
       choices: [
-        'docker-simple', 'docker-with-noVNC', 'chrome-config',
-        'doc', 'xlsx',
+        'docker-simple', 'docker-with-noVNC', 'chrome-config', 'test-case-xlsx',
       ],
     },
   ],
