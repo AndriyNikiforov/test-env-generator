@@ -4,7 +4,7 @@ const filesCli = require('./files');
 const generatorCli = require('./generator');
 
 commander
-  .command('file:gen')
+  .command('file:cli')
   .description('Command generate files')
   .action(() => filesCli());
 
@@ -14,7 +14,7 @@ commander
   .action(() => gitCli());
 
 commander
-  .command('test:gen')
+  .command('test:cli')
   .description('Command generating skeleton from local repository')
   .action(() => generatorCli());
 

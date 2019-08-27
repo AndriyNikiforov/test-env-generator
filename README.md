@@ -18,10 +18,15 @@ TEG is a tool for generate skeleton for fast start write tests.
 
 ## Usage
 
-* Run generator with path where must be unzip ```teg <option> <path>```
+* Run generator with path where must be unzip ```teg cli_name:cli```
 * Run help comand ``` teg -h ```
 
-Options
+CLI list:
+* file
+* git
+* test
+
+Available skeleton's
 * selenium
 * appium
 * webdriver.io
@@ -29,9 +34,10 @@ Options
 * python selenium
 * lighthouse (chrome dev tool for testing pages) + jest
 
+
 ## Help command
 
-* ```teg info``` - show base information about commands
+* ```teg ``` or ``` teg -h ``` - show base information about commands
 
 ## HOW TO MAKE SCREENSHOT
 [ABOUT](HOW_TO_MAKE_SCREENSHOT.md)

@@ -15,7 +15,7 @@ module.exports = {
       type: 'list',
       name: 'type',
       message: 'Select the test skeleton to generate:',
-      choices: ['selenium', 'appium', 'python+selenium'],
+      choices: ['selenium', 'appium', 'python-selenium'],
     },
   ],
   gitQuestion: [

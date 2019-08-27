@@ -13,7 +13,7 @@ const { gitQuestion } = require('./config/');
 const cloneSkeleton = (address, folderName) => {
   const process = spawn('git', ['clone', address]);
   process.on('close', () => makeArch('skeleton', folderName));
-  process.on('error', (err) => error(err));
+  process.on('error', (err) => { error(err); });
 };
 
 const address = {
