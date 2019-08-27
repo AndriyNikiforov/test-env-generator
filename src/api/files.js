@@ -9,10 +9,10 @@ class Files {
    */
   async getTemplate() {
     await copyFile(resolve(__dirname, '../assets/docs/TEMPLATE_TEST_CASE.xlsx'),
-     './test-template-table.xlsx', (err) => {
-      if (err) throw new Error(err);
-      log('Success');
-    });
+      './test-template-table.xlsx', (err) => {
+        if (err) throw new Error(err);
+        log('Success');
+      });
   }
 
   /**

@@ -13,8 +13,13 @@ class Zip {
   async exactArch(pathToArch) {
     const zip = new Unzip(resolve(__dirname, pathToArch));
 
-    await mkdir('./qa-skeleton');
-    await zip.extractAllTo('./qa-skeleton', true);
+    await mkdir('./qa-skeleton', (error) => {
+      if (error) throw error;
+    });
+
+    await zip.extractAllToAsync('./qa-skeleton', true, (error) => {
+      if (error) throw error;
+    });
   }
 
   /**
@@ -27,7 +32,6 @@ class Zip {
 
     await zip.addLocalFolder(folderName, './');
     await zip.writeZip(`${name}.zip`);
-
     await rimraf(folderName, (err) => {
       if (err) throw new Error(err);
       log('Success');
