@@ -29,7 +29,7 @@ const makeArch = async (name, folderName) => {
     cwd: `./${folderName}`,
   }, {});
 
-  archive.finalize();
+  await archive.finalize();
 
   await rimraf(folderName, (error) => {
     if (error) throw error;
