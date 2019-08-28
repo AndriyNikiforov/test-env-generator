@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
