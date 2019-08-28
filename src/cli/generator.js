@@ -3,9 +3,9 @@ const { exactArch } = require('../api/zip');
 const { generatorQuestion } = require('./config/');
 
 const path = {
-  appium: '../assets/appiumwdblui.zip',
-  selJest: '../assets/selje.zip',
-  pySelenium: '../assets/pyT.zip',
+  appium: './lib/assets/appiumwdblui.zip',
+  selJest: './lib/assets/selje.zip',
+  pySelenium: './lib/assets/pyT.zip',
 };
 
 module.exports = () => {
@@ -18,7 +18,7 @@ module.exports = () => {
         case 'appium':
           exactArch(path.appium);
           break;
-        case 'python+selenium':
+        case 'python-selenium':
           exactArch(path.pySelenium);
           break;
         default: break;

@@ -1,6 +1,6 @@
 {
   "name": "test-env-generator",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "description": "tool for generate env with all needed solution",
   "main": "index.js",
   "scripts": {
@@ -68,9 +68,10 @@
     "mocha": "^6.1.4"
   },
   "dependencies": {
-    "adm-zip": "^0.4.13",
+    "archiver": "^3.1.1",
     "commander": "^3.0.0",
     "inquirer": "^7.0.0",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "unzipper": "^0.10.4"
   }
 }

@@ -1,26 +1,35 @@
-const Unzip = require('adm-zip');
+const archiver = require('archiver');
 const rimraf = require('rimraf');
+const unzip = require('unzipper');
 const { log } = require('console');
-const { mkdir } = require('fs');
 const { resolve } = require('path');
+const { mkdir, createWriteStream, createReadStream } = require('fs');
 
 const exactArch = async (pathToArch) => {
-  const zip = new Unzip(resolve(__dirname, pathToArch));
+  const readStream = createReadStream(resolve(pathToArch));
 
   await mkdir('./qa-skeleton', (error) => {
     if (error) throw error;
   });
-
-  await zip.extractAllToAsync('./qa-skeleton', true, (error) => {
-    if (error) throw error;
-  });
+  readStream.pipe(unzip.Extract({ path: './qa-skeleton'}));
+  log('Success')
 };
 
 const makeArch = async (name, folderName) => {
-  const zip = new Unzip();
+  const output = createWriteStream(`./${name}.zip`);
+  const archive = archiver('zip', {
+    zlib: { level: 9 }
+  });
 
-  await zip.addLocalFolder(folderName, './');
-  await zip.writeZip(`${name}.zip`);
+  archive.on('error', (err) => { throw err; })
+
+  archive.pipe(output);
+  archive.glob('**/*', {
+    cwd: `./${folderName}`,
+  }, {});
+
+  archive.finalize();
+
   await rimraf(folderName, (error) => {
     if (error) throw error;
     log('Success');
