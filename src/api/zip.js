@@ -22,9 +22,7 @@ const makeArch = async (name, folderName) => {
 
   archive.on('error', (err) => { throw err; });
   archive.pipe(output);
-  archive.glob('**/*', {
-    cwd: `./${folderName}`,
-  }, {});
+  archive.glob('**/*', { cwd: `./${folderName}` }, {});
 
   await archive.finalize();
   await rimraf(folderName, (error) => errorResolver(error));
