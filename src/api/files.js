@@ -8,8 +8,8 @@ const errorResolver = (err) => {
 };
 
 const getTemplate = async () => {
-  const pathTo = resolve(__dirname, '../assets/docs/TEMPLATE_TEST_CASE.xlsx');
   const path = './test-template-table.xlsx';
+  const pathTo = resolve(__dirname, '../assets/docs/TEMPLATE_TEST_CASE.xlsx');
   await copyFile(pathTo, path, (err) => errorResolver(err));
 };
 

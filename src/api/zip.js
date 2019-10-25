@@ -10,10 +10,11 @@ const errorResolver = (err) => {
 };
 
 const exactArch = async (pathToArch) => {
+  const pathTo = './qa-skeleton';
   const readStream = createReadStream(pathToArch);
 
-  await mkdir('./qa-skeleton', (err) => errorResolver(err));
-  readStream.pipe(unzip.Extract({ path: './qa-skeleton' }));
+  await mkdir(pathTo, (err) => errorResolver(err));
+  readStream.pipe(unzip.Extract({ path: pathTo }));
 };
 
 const makeArch = async (name, folderName) => {
