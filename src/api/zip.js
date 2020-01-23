@@ -1,4 +1,4 @@
-const unzip = require('unzip');
+const unzip = require('unzipper');
 const rimraf = require('rimraf');
 const archiver = require('archiver');
 const { log } = require('console');

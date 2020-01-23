@@ -10,8 +10,8 @@ const address = {
   lighthouse: 'https://github.com/AndriyNikiforov/lighthouse-tempalate.git',
 };
 
-const cloneSkeleton = (address, folderName) => {
-  const process = spawn('git', ['clone', address]);
+const cloneSkeleton = (link, folderName) => {
+  const process = spawn('git', ['clone', link]);
   process.on('close', () => makeArch('skeleton', folderName));
   process.on('error', (err) => { throw err; });
 };
