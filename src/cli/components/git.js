@@ -1,7 +1,7 @@
 const { spawn } = require('child_process');
 const { prompt } = require('inquirer');
-const { makeArch } = require('../api/zip');
-const { gitQuestion } = require('./config/');
+const { makeArch } = require('../../api/zip');
+const { gitQuestion } = require('./config');
 
 const address = {
   locus: 'https://github.com/AndriyNikiforov/locust-simple-skeleton.git',

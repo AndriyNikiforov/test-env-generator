@@ -1,6 +1,6 @@
 const { prompt } = require('inquirer');
-const { fileQuestion } = require('./config/');
-const { getTemplate, move } = require('../api/files');
+const { fileQuestion } = require('./config');
+const { getTemplate, move } = require('../../api/files');
 
 const path = {
   dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',

@@ -1,6 +1,6 @@
 const { prompt } = require('inquirer');
-const { exactArch } = require('../api/zip');
-const { generatorQuestion } = require('./config/');
+const { exactArch } = require('../../api/zip');
+const { generatorQuestion } = require('./config');
 
 const path = {
   appium: './lib/assets/appiumwdblui.zip',

@@ -26,4 +26,11 @@ module.exports = {
       choices: ['selenium', 'appium', 'lighthouse', 'locus'],
     },
   ],
+  gitUserQuestion: [
+    {
+      type: 'input',
+      name: 'gitUserRepository',
+      message: 'Put url to git repository',
+    },
+  ],
 };

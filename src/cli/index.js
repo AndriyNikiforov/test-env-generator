@@ -1,7 +1,8 @@
 const commander = require('commander');
-const gitCli = require('./git');
-const filesCli = require('./files');
-const generatorCli = require('./generator');
+const gitCli = require('./components/git');
+const gitUser = require('./components/gitUser');
+const filesCli = require('./components/files');
+const generatorCli = require('./components/generator');
 
 commander
   .command('file:cli')
@@ -12,6 +13,11 @@ commander
   .command('git:cli')
   .description('Command generate skeleton from git repository')
   .action(() => gitCli());
+
+commander
+  .command('user:rep')
+  .description('Command generate skeleton from pasted url')
+  .action(() => gitUser());
 
 commander
   .command('test:cli')

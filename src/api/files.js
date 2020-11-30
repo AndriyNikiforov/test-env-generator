@@ -3,7 +3,10 @@ const { resolve } = require('path');
 const { copyFile } = require('fs');
 
 const errorResolver = (err) => {
-  if (err) throw err;
+  if (err) {
+    throw err;
+  }
+
   log('Success');
 };
 
