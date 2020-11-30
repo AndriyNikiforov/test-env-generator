@@ -1,3 +1,3 @@
-const cli = require('./lib/cli');
+const cli = require('./lib/bundle');
 
 cli();

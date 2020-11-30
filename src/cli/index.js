@@ -25,6 +25,9 @@ commander
   .action(() => generatorCli());
 
 module.exports = () => {
+  if (process.argv.length !== 3) {
+    commander.help();
+  }
+
   commander.parse(process.argv);
-  if (commander.args.length === 0) commander.help();
 };

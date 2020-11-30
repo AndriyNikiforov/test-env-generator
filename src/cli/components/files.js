@@ -3,9 +3,9 @@ const { fileQuestion } = require('./config');
 const { getTemplate, move } = require('../api/files');
 
 const path = {
-  dockerNoVNC: '../assets/docker/docker-compose-novnc.yml',
-  dockerSimple: '../assets/docker/docker-compose-simple.yml',
-  chromeConfig: '../assets/config/index.js',
+  dockerNoVNC: './assets/docker/docker-compose-novnc.yml',
+  dockerSimple: './assets/docker/docker-compose-simple.yml',
+  chromeConfig: './assets/config/index.js',
 };
 
 module.exports = () => {
