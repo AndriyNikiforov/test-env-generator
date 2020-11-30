@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 const { prompt } = require('inquirer');
-const { makeArch } = require('../../api/zip');
+const { makeArch } = require('../api/zip');
 const { gitUserQuestion } = require('./config');
 
 const parseGithubUrl = (url) => {
@@ -10,7 +10,7 @@ const parseGithubUrl = (url) => {
     return matches[2];
   }
 
-  return false;
+  throw new Error('Wrong url !');
 };
 
 const cloneSkeleton = (link, folderName) => {
@@ -24,6 +24,7 @@ const gitUser = () => {
     .then((answer) => {
       const { gitUserRepository } = answer;
       const folderName = parseGithubUrl(gitUserRepository);
+
       cloneSkeleton(gitUserRepository, folderName);
 
       return 'Success';

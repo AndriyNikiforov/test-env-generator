@@ -1,5 +1,5 @@
 const { prompt } = require('inquirer');
-const { exactArch } = require('../../api/zip');
+const { exactArch } = require('../api/zip');
 const { generatorQuestion } = require('./config');
 
 const path = {

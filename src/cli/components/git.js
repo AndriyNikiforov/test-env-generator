@@ -1,6 +1,6 @@
 const { spawn } = require('child_process');
 const { prompt } = require('inquirer');
-const { makeArch } = require('../../api/zip');
+const { makeArch } = require('../api/zip');
 const { gitQuestion } = require('./config');
 
 const address = {
